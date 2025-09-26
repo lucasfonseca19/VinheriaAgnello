@@ -1,0 +1,322 @@
+/* Vinheria Agnello - Estilos Personalizados */
+
+/* Importar fontes do Google */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto+Condensed:wght@300;400;500;600&display=swap');
+
+/* Variáveis CSS da Vinheria Agnello */
+:root {
+  --bege: #f9f5ef;
+  --marrom: #4b3f2f;
+  --dourado: #b87b1f;
+  --cinza: #7a6f62;
+  --bg-header: #F5EBDA;
+  --branco: #FFFFFF;
+}
+
+/* Reset e configurações gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  background-color: var(--bege);
+  color: var(--marrom);
+  line-height: 1.6;
+}
+
+/* Tipografia personalizada */
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-roboto {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Cores personalizadas */
+.text-marrom { color: var(--marrom) !important; }
+.text-dourado { color: var(--dourado) !important; }
+.text-cinza { color: var(--cinza) !important; }
+.bg-bege { background-color: var(--bege) !important; }
+.bg-marrom { background-color: var(--marrom) !important; }
+.bg-dourado { background-color: var(--dourado) !important; }
+.bg-header { background-color: var(--bg-header) !important; }
+
+/* Header personalizado */
+.agnello-header {
+  background-color: var(--bg-header);
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.agnello-logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--marrom);
+  text-decoration: none;
+}
+
+.agnello-logo img {
+  height: 80px;
+  width: auto;
+  margin-right: 10px;
+}
+
+.agnello-nav a {
+  color: var(--marrom);
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 1rem;
+  transition: color 0.3s ease;
+}
+
+.agnello-nav a:hover {
+  color: var(--dourado);
+}
+
+.agnello-icons a {
+  margin-left: 15px;
+  text-decoration: none !important;
+  display: inline-block;
+}
+
+.agnello-icons a:hover {
+  text-decoration: none !important;
+}
+
+.agnello-icons img {
+  height: 25px;
+  width: auto;
+  display: block;
+}
+
+/* Botões personalizados */
+.btn-agnello {
+  background-color: transparent;
+  border: 1px solid var(--marrom);
+  color: var(--marrom);
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.btn-agnello:hover {
+  background-color: var(--marrom);
+  color: var(--branco);
+  border-color: var(--marrom);
+}
+
+.btn-dourado {
+  background-color: var(--dourado);
+  border: 1px solid var(--dourado);
+  color: var(--branco);
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.btn-dourado:hover {
+  background-color: var(--marrom);
+  border-color: var(--marrom);
+  color: var(--branco);
+}
+
+/* Hero section */
+.agnello-hero {
+  background-color: var(--bg-header);
+  padding: 5% 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.agnello-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 50%;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.agnello-hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: var(--dourado);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  color: var(--marrom);
+}
+
+/* Steps section */
+.agnello-steps {
+  padding: 3rem 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.step-number {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: var(--dourado);
+  display: block;
+  font-family: 'Playfair Display', serif;
+}
+
+.step-subtitle {
+  font-size: 0.9rem;
+  color: var(--cinza);
+  border-bottom: 3px solid var(--bg-header);
+  display: inline-block;
+  white-space: nowrap;
+  padding-bottom: 2px;
+}
+
+/* About section */
+.agnello-about {
+  padding: 8% 0;
+}
+
+.about-subtitle {
+  color: var(--dourado);
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.about-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  color: var(--marrom);
+}
+
+/* Formulários */
+.agnello-form {
+  background: var(--branco);
+  padding: 2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.agnello-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--dourado);
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+}
+
+.agnello-form label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--marrom);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.agnello-form .form-control {
+  background-color: var(--bg-header);
+  border: 1px solid #ddd;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  transition: border-color 0.3s ease;
+}
+
+.agnello-form .form-control:focus {
+  border-color: var(--dourado);
+  box-shadow: 0 0 0 0.2rem rgba(184, 123, 31, 0.25);
+  background-color: var(--branco);
+}
+
+.agnello-form .btn {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: var(--marrom);
+  color: var(--branco);
+  font-weight: 600;
+  font-family: 'Roboto Condensed', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.agnello-form .btn:hover {
+  background: var(--dourado);
+}
+
+/* Footer */
+.agnello-footer {
+  background-color: var(--bg-header);
+  padding: 3rem 0;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+  color: var(--marrom);
+}
+
+.agnello-footer .logo-footer img {
+  height: 90px;
+  width: auto;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .agnello-logo {
+    font-size: 1.2rem;
+  }
+
+  .agnello-logo img {
+    height: 60px;
+  }
+
+  .agnello-nav a {
+    margin: 0 0.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .step-number {
+    font-size: 2.5rem;
+  }
+}
