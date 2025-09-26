@@ -1006,3 +1006,387 @@ body {
     margin-bottom: 1rem;
   }
 }
+
+/* ===== ESTILOS DO QUIZ "DESCUBRA SEU VINHO" ===== */
+
+/* Classes de cor Agnello específicas para o quiz */
+.text-agnello-brown {
+  color: var(--marrom) !important;
+}
+
+.text-agnello-gold {
+  color: var(--dourado) !important;
+}
+
+.bg-agnello-beige {
+  background-color: var(--bege) !important;
+}
+
+.bg-agnello-gold {
+  background-color: var(--dourado) !important;
+}
+
+/* Botões personalizados do quiz */
+.btn-agnello-primary {
+  background-color: var(--dourado);
+  border-color: var(--dourado);
+  color: var(--branco);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-agnello-primary:hover,
+.btn-agnello-primary:focus {
+  background-color: var(--marrom);
+  border-color: var(--marrom);
+  color: var(--branco);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 123, 31, 0.3);
+}
+
+.btn-outline-agnello {
+  border-color: var(--dourado);
+  color: var(--dourado);
+  background-color: transparent;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-agnello:hover,
+.btn-outline-agnello:focus {
+  background-color: var(--dourado);
+  border-color: var(--dourado);
+  color: var(--branco);
+  transform: translateY(-1px);
+}
+
+/* Progress bar do quiz */
+.quiz-progress .progress {
+  background-color: #e9ecef;
+  border-radius: 10px;
+}
+
+.quiz-progress .progress-bar {
+  background-color: var(--dourado);
+  background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+/* Opções do quiz */
+.quiz-option {
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 0.75rem;
+  border: 2px solid #dee2e6;
+  border-radius: 12px;
+  background-color: var(--branco);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.quiz-option:hover {
+  border-color: var(--dourado);
+  background-color: var(--bege);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 123, 31, 0.15);
+  color: var(--marrom);
+}
+
+.quiz-option:focus {
+  border-color: var(--dourado);
+  box-shadow: 0 0 0 0.2rem rgba(184, 123, 31, 0.25);
+  color: var(--marrom);
+}
+
+.quiz-option .quiz-icon {
+  font-size: 1.5rem;
+  filter: grayscale(0.3);
+  transition: filter 0.3s ease;
+}
+
+.quiz-option:hover .quiz-icon {
+  filter: grayscale(0);
+}
+
+.quiz-option h6 {
+  color: var(--marrom);
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.quiz-option small {
+  color: var(--cinza);
+  transition: color 0.3s ease;
+}
+
+.quiz-option:hover small {
+  color: var(--marrom);
+}
+
+/* Seção A Palavra dos Agnello - Página Inicial e Resultado */
+.agnello-quote-section {
+  position: relative;
+  padding: 2rem;
+  background: linear-gradient(135deg, var(--bege) 0%, var(--bg-header) 100%);
+  border-radius: 15px;
+  border: 1px solid rgba(184, 123, 31, 0.2);
+}
+
+.agnello-quote-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.agnello-quote-title {
+  color: var(--marrom);
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.agnello-quote-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--dourado), transparent);
+}
+
+.agnello-quote-content {
+  position: relative;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--marrom);
+}
+
+.quote-mark {
+  font-size: 4rem;
+  color: var(--dourado);
+  opacity: 0.3;
+  font-family: 'Times New Roman', serif;
+  line-height: 1;
+  position: absolute;
+  font-weight: bold;
+}
+
+.quote-mark:first-child {
+  top: -10px;
+  left: -10px;
+}
+
+.quote-mark-end {
+  bottom: -20px;
+  right: -10px;
+  transform: rotate(180deg);
+}
+
+.agnello-signature {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(184, 123, 31, 0.3);
+}
+
+/* Versão mini para cards de resultado */
+.agnello-quote-mini {
+  background: linear-gradient(135deg, var(--bege) 0%, var(--bg-header) 100%);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(184, 123, 31, 0.2);
+  position: relative;
+}
+
+.agnello-quote-header-mini {
+  margin-bottom: 0.75rem;
+}
+
+.agnello-quote-title-mini {
+  color: var(--marrom);
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.agnello-quote-content-mini p {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--marrom);
+  margin-bottom: 0;
+}
+
+/* Cards de recomendação */
+.recommendation-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background-color: var(--branco);
+}
+
+.recommendation-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(184, 123, 31, 0.2);
+}
+
+.recommendation-card .badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+}
+
+.recommendation-card .card-img-top-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.recommendation-card .card-img-top {
+  transition: transform 0.3s ease;
+}
+
+.recommendation-card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* Features icons da página inicial */
+.feature-icon {
+  font-size: 2rem;
+  background: linear-gradient(135deg, var(--bege), var(--bg-header));
+  border: 2px solid rgba(184, 123, 31, 0.2);
+  transition: all 0.3s ease;
+}
+
+.feature-icon:hover {
+  background: linear-gradient(135deg, var(--dourado), var(--marrom));
+  border-color: var(--dourado);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(184, 123, 31, 0.3);
+}
+
+/* Animações do quiz */
+.quiz-question {
+  animation: slideInFromRight 0.5s ease-out;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Resumo do perfil na página de resultado */
+.card.bg-agnello-beige {
+  border: 1px solid rgba(184, 123, 31, 0.3);
+}
+
+/* Responsividade do quiz */
+@media (max-width: 768px) {
+  .quiz-option {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .quiz-option .quiz-icon {
+    font-size: 1.25rem;
+  }
+
+  .quiz-option h6 {
+    font-size: 0.9rem;
+  }
+
+  .quiz-option small {
+    font-size: 0.75rem;
+  }
+
+  .agnello-quote-section {
+    padding: 1.5rem;
+  }
+
+  .agnello-quote-title {
+    font-size: 1.25rem;
+  }
+
+  .agnello-quote-content {
+    font-size: 1rem;
+  }
+
+  .quote-mark {
+    font-size: 3rem;
+  }
+
+  .recommendation-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .quiz-option {
+    padding: 0.75rem;
+  }
+
+  .quiz-option .d-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .quiz-option .quiz-icon {
+    margin-bottom: 0.5rem;
+    margin-right: 0 !important;
+  }
+
+  .agnello-quote-section {
+    padding: 1rem;
+  }
+
+  .agnello-quote-title {
+    font-size: 1.1rem;
+  }
+
+  .agnello-quote-content {
+    font-size: 0.95rem;
+  }
+
+  .quote-mark {
+    font-size: 2.5rem;
+  }
+}
+
+/* Estados de hover melhorados */
+.btn-agnello-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(184, 123, 31, 0.4);
+}
+
+.quiz-option:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 15px rgba(184, 123, 31, 0.2);
+}
+
+/* Melhorias de acessibilidade */
+.quiz-option:focus-visible {
+  outline: 3px solid rgba(184, 123, 31, 0.5);
+  outline-offset: 2px;
+}
+
+.btn-agnello-primary:focus-visible,
+.btn-outline-agnello:focus-visible {
+  outline: 3px solid rgba(184, 123, 31, 0.5);
+  outline-offset: 2px;
+}
