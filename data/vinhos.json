@@ -19,7 +19,8 @@
       "ocasiao": ["Jantar especial", "Celebração"],
       "perfil": ["Aventureiro", "Sofisticado"],
       "corpo": "Encorpado",
-      "doçura": "Seco"
+      "doçura": "Seco",
+      "descricao_agnello": "Giulio Agnello: Quando visitei Saint-Émilion pela primeira vez, aos 25 anos, degustei este Ausone sob um céu estrelado. É impossível não se emocionar com tamanha perfeição. Este 2018 representa tudo que amo no Merlot: elegância sem perder a força, complexidade que evolui a cada gole. As notas de frutas negras se entrelaçam com toques minerais únicos do terroir calcário. É um vinho para momentos especiais, aqueles que ficam gravados na memória para sempre. Recomendo abrir duas horas antes do consumo e harmonizar com um entrecôte ao ponto. Uma experiência transformadora."
     },
     {
       "id": 2,
@@ -40,7 +41,8 @@
       "ocasiao": ["Jantar romântico", "Degustação"],
       "perfil": ["Sofisticado", "Tradicionalista"],
       "corpo": "Encorpado",
-      "doçura": "Seco"
+      "doçura": "Seco",
+      "descricao_agnello": "Bianca Agnello: Meu pai sempre diz que o Barolo é o vinho que ensina paciência. Este Brunate de 2017 é poesia líquida - taninos firmes como as montanhas do Piemonte, mas com uma elegância feminina que me encanta. Passei uma tarde inteira com Michele Chiarlo aprendendo sobre este terroir único. Cada gole revela camadas: rosas secas, alcatrão, cerejas maduras e especiarias orientais. É um vinho que pede contemplação. Sirva a 18°C em taças Burgundy, e deixe-o respirar por pelo menos uma hora. Um verdadeiro tesouro italiano que merece ser celebrado."
     },
     {
       "id": 3,
@@ -61,7 +63,8 @@
       "ocasiao": ["Almoço", "Aperitivo"],
       "perfil": ["Sem erro", "Elegante"],
       "corpo": "Leve",
-      "doçura": "Seco"
+      "doçura": "Seco",
+      "descricao_agnello": "Giulio Agnello: Chablis é onde o Chardonnay mostra sua verdadeira personalidade, despida de madeira e maquiagem. Este Premier Cru Montmains 2020 é cristalino como a manhã de inverno em Borgonha. O solo kimmeridgiano, rico em fósseis marinhos, confere uma mineralidade tão pura que parece beber o próprio terroir. Notas cítricas dançam com toques salinos, criando uma sinfonia refrescante. É o vinho perfeito para quem busca elegância sem ostentação. Recomendo com ostras de Marennes ou um linguado grelhado. Uma lição de pureza francesa."
     },
     {
       "id": 4,
@@ -82,7 +85,8 @@
       "ocasiao": ["Celebração", "Brinde"],
       "perfil": ["Luxuoso", "Sofisticado"],
       "corpo": "Médio",
-      "doçura": "Brut"
+      "doçura": "Brut",
+      "descricao_agnello": "Bianca Agnello: Dom Pérignon 2013 é como uma sinfonia em crescendo. O ano de 2013 foi desafiador em Champagne, mas a magia acontece nas dificuldades. Este vintage expressa uma tensão vibrante, quase elétrica. Bolhas finas como pérolas carregam aromas de brioche, maçã verde e flores brancas. Na boca, a acidez cortante equilibra perfeitamente a cremosidade. É um champagne que conta histórias - de vindimas frias, de paciência na cave, de mestre de cave que não aceita compromissos. Reserve para momentos únicos: um noivado, uma conquista especial, ou simplesmente para celebrar a vida."
     },
     {
       "id": 5,
@@ -103,7 +107,8 @@
       "ocasiao": ["Jantar família", "Fim de semana"],
       "perfil": ["Tradicionalista", "Consciente"],
       "corpo": "Encorpado",
-      "doçura": "Seco"
+      "doçura": "Seco",
+      "descricao_agnello": "Giulio Agnello: Portugal guarda tesouros que o mundo ainda está descobrindo. Este Vale Meão 2019 é um deles - uma homenagem à Touriga Nacional, a 'rainha' das castas portuguesas. O terroir do Douro Superior, com seus solos xistosos e clima extremo, produz vinhos de caráter único. Aqui temos concentração e elegância caminhando juntas: amoras silvestres, violetas, especiarias doces e um toque mineral que só o xisto consegue dar. É orgânico por convicção, não por moda. Um vinho que expressa o orgulho de uma nação vinícola milenar. Perfeito com um cabrito assado no forno a lenha."
     },
     {
       "id": 6,
@@ -124,7 +129,8 @@
       "ocasiao": ["Churrasco", "Encontro amigos"],
       "perfil": ["Aventureiro", "Descontraído"],
       "corpo": "Encorpado",
-      "doçura": "Seco"
+      "doçura": "Seco",
+      "descricao_agnello": "Bianca Agnello: A Argentina me conquistou através do Malbec, e este Catena Zapata 2020 é pura expressão dos Andes. Cultivado a mais de 1.500 metros de altitude, onde o sol escaldante do dia contrasta com noites geladas, esse vinho é intenso como o tango portenho. Cor violeta profunda, aromas explosivos de ameixas maduras, chocolate amargo e especiarias. Na boca, é aveludado, genéroso, com taninos maduros que abraçam o paladar. Não é um vinho para ficar pensando muito - é para sentir, para celebrar a vida. Ideal com um bife de chorízo na brasa e amigos queridos ao redor da mesa."
     },
     {
       "id": 7,
@@ -145,7 +151,8 @@
       "ocasiao": ["Almoço", "Happy hour"],
       "perfil": ["Patriota", "Curioso"],
       "corpo": "Médio",
-      "doçura": "Seco"
+      "doçura": "Seco",
+      "descricao_agnello": "Giulio Agnello: Tenho um carinho especial pelo vinho brasileiro, e este Miolo Lote 43 me enche de orgulho. Fazer Pinot Noir em clima subtropical é quase uma herança, mas a família Miolo conseguiu esse milagre na Serra Gaúcha. Este 2021 é delicado como uma aquarela: cerejas frescas, toques herbáceos e uma acidez vibrante que nos remete aos vinhos do Novo Mundo. Não compete com a Borgonha, mas tem personalidade própria. É o tipo de vinho que me faz acreditar no potencial do Brasil vinícola. Sirva ligeiramente resfriado e aprecie essa expressão autênticamente brasileira do Pinot Noir."
     },
     {
       "id": 8,
@@ -166,7 +173,8 @@
       "ocasiao": ["Verão", "Piscina"],
       "perfil": ["Descontraído", "Fresh"],
       "corpo": "Leve",
-      "doçura": "Seco"
+      "doçura": "Seco",
+      "descricao_agnello": "Bianca Agnello: Este Whispering Angel 2022 é o verão em uma garrafa! Proveça sempre foi sinônimo de rosé, e este aqui é o que chamo de 'rosé de piscina' - mas no melhor sentido. Cor salmão pálido, cristalino como o mar Mediterrâneo. Aromas delicados de morangos frescos, melancia e um toque de ervas provençais. Na boca, é refrescante como uma brisa marinha, com acidez equilibrada que desperta o paladar. Não é um vinho para grandes refleixões - é para momentos de puro prazer. Sirva bem gelado ao lado de uma salada niçoise ou simplesmente para brindar ao pôr do sol."
     },
     {
       "id": 9,
@@ -187,7 +195,8 @@
       "ocasiao": ["Sobremesa", "Aperitivo"],
       "perfil": ["Sem erro", "Explorador"],
       "corpo": "Leve",
-      "doçura": "Meio-doce"
+      "doçura": "Meio-doce",
+      "descricao_agnello": "Giulio Agnello: Os alemães são mestres na arte de equilibrar açúcar e acidez, e este Dr. Loosen Kabinett 2021 é uma aula magistral. O Mosel, com seus solos de ardosia e vinhedos íngremes, produz Rieslings de uma delicadeza única. Com apenas 8,5% de álcool, é um vinho que conversa, não grita. Aromas de pêssego branco, flores de laço e minerais molhados. A doçura residual é sutil, nunca enjoativa, equilibrada por uma acidez vibrante. É perfeito com comida asiática - o picante da pimenta encontra o frescor do vinho. Uma descoberta para quem ainda não conhece a genialidade alemã."
     },
     {
       "id": 10,
@@ -208,7 +217,8 @@
       "ocasiao": ["Jantar especial", "Negócios"],
       "perfil": ["Sofisticado", "Aventureiro"],
       "corpo": "Encorpado",
-      "doçura": "Seco"
+      "doçura": "Seco",
+      "descricao_agnello": "Bianca Agnello: Almaviva é a prova de que quando Chile e França se unem, a magia acontece. Esta parceria entre Barão Philippe de Rothschild e Concha y Toro criou algo extraordinário no vale do Maipo. Este 2018 é poder e elegância em equilíbrio perfeito: cassis, chocolate amargo, grafite e especiarias complexas. O terroir chileno oferece a fruta generosa, enquanto a expertise francesa traz a finesse. Cada gole revela camadas que se desdobram lentamente. É um vinho para grandes ocasiões, que merece tempo e atenção. Recomendo decantar por uma hora e servir com um cordeiro patagonio. Uma experiência inesquecível."
     },
     {
       "id": 11,
@@ -229,7 +239,8 @@
       "ocasiao": ["Jantar romântico", "Aniversário"],
       "perfil": ["Tradicionalista", "Sofisticado"],
       "corpo": "Encorpado",
-      "doçura": "Seco"
+      "doçura": "Seco",
+      "descricao_agnello": "Giulio Agnello: Se há um vinho que representa a alma da Toscana, é este Brunello Riserva 2016. Montalcino é a catedral do Sangiovese, e este vinho é uma oração em líquido. Seis anos de envelhecimento obrigatório - dois em carvalho, quatro em garrafa - criaram esta obra-prima. Aromas de cerejas secas, couro curtido, tabaco e especiarias orientais. Na boca, é majestoso: taninos sedosos, acidez vibrante e um final que parece não ter fim. É um vinho que conta a história da Itália, das gerações de viticultores que dedicaram suas vidas a esta terra. Sirva a 18°C e deixe respirar por duas horas. Uma lenda viva."
     },
     {
       "id": 12,
@@ -250,7 +261,8 @@
       "ocasiao": ["Almoço", "Aperitivo"],
       "perfil": ["Purista", "Elegante"],
       "corpo": "Médio",
-      "doçura": "Seco"
+      "doçura": "Seco",
+      "descricao_agnello": "Bianca Agnello: Sancerre é onde o Sauvignon Blanc encontra sua expressão mais nobre. Henri Bourgeois é uma família que venero - guardavam vinhas em Sancerre desde o século XVI! Este 2022 é cristalino como o rio Loire: aromas de groselha branca, capim-limão e pedra molhada. O terroir calcario-argiloso de Sancerre dá essa mineralidade penetrante que é a assinatura da região. Na boca, é tenso, vibrante, com acidez que desperta todos os sentidos. Harmoniza divinamente com queijo de cabra de Crottin de Chavignol - é o casamento perfeito entre vinho e terroir. Um clássico que nunca sai de moda."
     },
     {
       "id": 13,
@@ -271,7 +283,8 @@
       "ocasiao": ["Happy hour", "Celebração"],
       "perfil": ["Descontraído", "Sociável"],
       "corpo": "Leve",
-      "doçura": "Extra-seco"
+      "doçura": "Extra-seco",
+      "descricao_agnello": "Giulio Agnello: Este Prosecco DOCG 2022 é a alegria italiana em cada bolha! Valdobbiadene é o coração do verdadeiro Prosecco - aqui a tradição da uva Glera é sagrada. Diferente dos espumantes franceses, este tem a espontaneidade italiana: borbulhas generosas, aromas de maçã verde, flores de acácia e um toque de ameixas. É fresco, descomplicado, perfeito para o aperitivo das 18h com amigos queridos. Não é pretensioso como o champagne - é honestão, direto, como os italianos gostam da vida. Sirva bem gelado com antipasti variados: presunto de Parma, mussarela de búfala, azeitonas... La dolce vita em uma taça!"
     },
     {
       "id": 14,
@@ -292,7 +305,8 @@
       "ocasiao": ["Evento especial", "Investimento"],
       "perfil": ["Colecionador", "Luxuoso"],
       "corpo": "Encorpado",
-      "doçura": "Seco"
+      "doçura": "Seco",
+      "descricao_agnello": "Bianca Agnello: Opus One 2019 é o sonho americano em forma líquida. Quando Baron Philippe de Rothschild se uniu a Robert Mondavi, criaram mais que um vinho - criaram uma lenda. Este é o resultado de duas filosofias vinícolas se encontrando em Napa Valley. Poder californiano temperado pela elegância francesa. Aromas intensos de cassis, cedro, baunilha e especiarias exóticas. Na boca, é sumptuoso, concentrado, com taninos aveludados e um final que ecoa por minutos. É um vinho de coleção, um investimento emocional. Cada garrafa é numerada, cada safra limitada. Um símbolo de excelência que transcende fronteiras."
     },
     {
       "id": 15,
@@ -313,7 +327,8 @@
       "ocasiao": ["Sobremesa", "Jantar asiático"],
       "perfil": ["Explorador", "Aventureiro"],
       "corpo": "Médio",
-      "doçura": "Meio-seco"
+      "doçura": "Meio-seco",
+      "descricao_agnello": "Giulio Agnello: Gewürztraminer é a uva mais exótica que conheco - até o nome é uma aventura! Este exemplar da Alsace 2021 é como uma viagem sensorial ao Oriente. Alsace sempre foi a ponte entre França e Alemanha, e este vinho expressa essa dualidade cultural. Aromas explosivos de lichia, rosas, canela e gengibre. É quase perfumado, mas equilibrado por uma acidez refrescante. A doçura residual é sutil, nunca exagerada. Experimente com culinária asiática - a combinação é mágica! Ou com foie gras, como fazem os alsacianos. Um vinho que desperta curiosidade e convida à descoberta."
     },
     {
       "id": 16,
@@ -334,7 +349,8 @@
       "ocasiao": ["Jantar família", "Tapas"],
       "perfil": ["Tradicionalista", "Autêntico"],
       "corpo": "Médio",
-      "doçura": "Seco"
+      "doçura": "Seco",
+      "descricao_agnello": "Bianca Agnello: Marqués de Riscal é história líquida - desde 1858 fazendo vinhos em Rioja! Este Reserva 2017 é a essência da Tempranillo: uva nobre que só mostra seu verdadeiro potencial na Espanha. Três anos de envelhecimento, sendo um em carvalho americano, criaram esta joia. Aromas de cerejas maduras, baunilha, couro e especiarias. Na boca, é equilibrado, com taninos macios e acidez que desperta o apetite. É o tipo de vinho que pede uma mesa cheia de amigos, jamon ibérico, manchego curado e muito papo. A Espanha em uma taça - calorosa, generosa e autentica. ¡Salúd!"
     },
     {
       "id": 17,
@@ -355,7 +371,8 @@
       "ocasiao": ["Jantar especial", "Coleção"],
       "perfil": ["Colecionador", "Aventureiro"],
       "corpo": "Encorpado",
-      "doçura": "Seco"
+      "doçura": "Seco",
+      "descricao_agnello": "Giulio Agnello: Penfolds Grange 2018 é o vinho que colocou a Austrália no mapa vinícola mundial. Max Schubert criou uma lenda quando inventou este estilo nos anos 1950. É Shiraz na sua expressão máxima - selvagem como o Outback, mas refinado como Sydney. Multi-regional, multi-vinhedo, uma sinfonia de terroirs australianos. Aromas de amoras silvestres, eucalipto, chocolate amargo e especiarias exóticas. Na boca, é monumental: concentração extrema, taninos poderosos mas sedosos, final infinito. É um vinho que amadurece por décadas, uma herança líquida. Revolucionou minha visão sobre vinhos do Novo Mundo. Uma obra-prima australiana."
     },
     {
       "id": 18,
@@ -376,7 +393,8 @@
       "ocasiao": ["Aperitivo", "Happy hour"],
       "perfil": ["Consciente", "Descontraído"],
       "corpo": "Leve",
-      "doçura": "Brut Nature"
+      "doçura": "Brut Nature",
+      "descricao_agnello": "Bianca Agnello: Este Cava Brut Nature da Gramona 2020 é a autêntica expressão catalã. A família Gramona é pioneira na produção orgânica, respeitando a terra como nossos ancestrais faziam. Xarel·lo é a uva autóctone da Catalunya, e aqui ela brilha sem maquiagem. Brut Nature significa zero dosagem - é o espumante em sua forma mais pura. Aromas delicados de maçã verde, ervas mediterrâneas e fermento. Na boca, é seco, mineral, com bolhas finas e persistentes. É honesto, direto, sem pretensões. Perfeito para um aperitivo catalão: pa amb tomàquet, olivas e jamón. A simplicidade elevada à arte."
     }
   ]
 }

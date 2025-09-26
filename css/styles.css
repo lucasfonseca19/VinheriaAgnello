@@ -597,6 +597,261 @@ body {
   }
 }
 
+/* ===== PÁGINA DE DETALHE DO VINHO ===== */
+
+/* Imagem do Vinho */
+.wine-detail-image {
+  border: 1px solid var(--bg-header);
+  transition: all 0.3s ease;
+}
+
+.wine-detail-image:hover {
+  border-color: var(--dourado);
+  box-shadow: 0 8px 25px rgba(184, 123, 31, 0.15);
+}
+
+/* Informações do Vinho */
+.wine-detail-info {
+  border: 1px solid var(--bg-header);
+}
+
+.wine-detail-info .hero-title {
+  font-size: 2.2rem;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.wine-detail-info .rating {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Seção Informações Técnicas */
+.wine-tech-info h6 {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.wine-tech-info p {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 1rem;
+  color: var(--marrom);
+}
+
+/* Seção de Compra */
+.purchase-section {
+  border-top: 2px solid var(--bg-header);
+  padding-top: 1.5rem;
+}
+
+.purchase-section .form-select {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-weight: 500;
+  border-color: var(--bg-header);
+  background-color: var(--bg-header);
+}
+
+.purchase-section .form-select:focus {
+  border-color: var(--dourado);
+  box-shadow: 0 0 0 0.2rem rgba(184, 123, 31, 0.25);
+  background-color: var(--branco);
+}
+
+.stock-info {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.85rem;
+}
+
+/* Seção "A Palavra dos Agnello" */
+.agnello-word-section {
+  border: 1px solid var(--bg-header);
+  margin-top: 3rem;
+}
+
+.agnello-word-header {
+  background: linear-gradient(135deg, var(--dourado) 0%, var(--marrom) 100%);
+  border-bottom: 3px solid var(--marrom);
+}
+
+.agnello-word-header h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.agnello-word-content {
+  background: linear-gradient(to bottom, var(--branco) 0%, var(--bg-header) 100%);
+}
+
+.agnello-word-content blockquote {
+  border: none;
+  position: relative;
+}
+
+.agnello-word-content blockquote::before {
+  content: """;
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: var(--dourado);
+  position: absolute;
+  top: -20px;
+  left: -30px;
+  opacity: 0.3;
+}
+
+.agnello-word-content blockquote::after {
+  content: """;
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  color: var(--dourado);
+  position: absolute;
+  bottom: -40px;
+  right: -30px;
+  opacity: 0.3;
+}
+
+.agnello-word-content p {
+  font-size: 1.1rem;
+  color: var(--marrom);
+  line-height: 1.8;
+  text-align: justify;
+  margin-bottom: 0;
+  padding: 0 2rem;
+}
+
+/* Badges Específicas do Detalhe */
+.wine-detail-info .badges-container .badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Preço em Destaque */
+.wine-detail-info .price-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/* Responsividade da Página de Detalhe */
+@media (max-width: 992px) {
+  .wine-detail-info .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .agnello-word-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .agnello-word-content p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .agnello-word-content blockquote::before,
+  .agnello-word-content blockquote::after {
+    font-size: 3rem;
+  }
+
+  .agnello-word-content blockquote::before {
+    top: -15px;
+    left: -20px;
+  }
+
+  .agnello-word-content blockquote::after {
+    bottom: -30px;
+    right: -20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wine-detail-info .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .wine-detail-info .price-section h2 {
+    font-size: 2rem;
+  }
+
+  .agnello-word-header h3 {
+    font-size: 1.3rem;
+  }
+
+  .agnello-word-content {
+    padding: 2rem 1rem !important;
+  }
+
+  .agnello-word-content p {
+    font-size: 0.95rem;
+    text-align: left;
+    padding: 0;
+  }
+
+  .agnello-word-content blockquote::before,
+  .agnello-word-content blockquote::after {
+    display: none;
+  }
+
+  .purchase-section .row {
+    flex-direction: column;
+  }
+
+  .purchase-section .col-sm-4,
+  .purchase-section .col-sm-8 {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .wine-detail-info .hero-title {
+    font-size: 1.4rem;
+  }
+
+  .wine-detail-info .rating {
+    font-size: 1.2rem;
+  }
+
+  .agnello-word-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .agnello-word-content p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animações e Transições */
+.wine-detail-image img {
+  transition: transform 0.3s ease;
+}
+
+.wine-detail-image:hover img {
+  transform: scale(1.02);
+}
+
+.agnello-word-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @media (max-width: 576px) {
   .search-bar .input-group .form-control {
     font-size: 0.9rem;

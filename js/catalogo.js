@@ -423,7 +423,7 @@ class CatalogoManager {
 
     return `
       <div class="col">
-        <div class="card wine-card h-100 shadow-sm">
+        <div class="card wine-card h-100 shadow-sm" style="cursor: pointer;" onclick="window.location.href='detalhe-vinho.html?id=${vinho.id}'">
           <div class="position-relative">
             <img src="${vinho.imagem}" class="card-img-top" alt="${vinho.nome}">
             <div class="badges-container position-absolute top-0 start-0 p-2">
@@ -442,7 +442,9 @@ class CatalogoManager {
             <div class="price-section mt-auto">
               <h5 class="text-dourado mb-2">R$ ${vinho.preco.toFixed(2).replace('.', ',')}</h5>
               <div class="d-grid">
-                <button class="btn btn-agnello btn-sm">Adicionar ao Carrinho</button>
+                <a href="detalhe-vinho.html?id=${vinho.id}" class="btn btn-dourado btn-sm text-decoration-none" onclick="event.stopPropagation();">
+                  Ver Detalhes
+                </a>
               </div>
             </div>
           </div>
