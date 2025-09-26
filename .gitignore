@@ -1,0 +1,37 @@
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.qodo/
+
+# Node modules (caso use no futuro)
+node_modules/
+npm-debug.log*
+
+# Java/JSP build files (para quando migrar)
+target/
+build/
+*.class
+*.war
+*.jar
+
+# Environment variables
+.env
+.env.local
+
+# Backup files
+*.bak
+*~
