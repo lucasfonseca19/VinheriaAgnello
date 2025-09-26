@@ -611,3 +611,143 @@ body {
     font-size: 1.1rem;
   }
 }
+
+/* ===== ESTADOS DOS FILTROS (JavaScript) ===== */
+
+/* Filtros Ativos */
+.filter-group .form-check-input:checked + .form-check-label {
+  color: var(--dourado);
+  font-weight: 600;
+}
+
+.filter-group .form-select:focus,
+.filter-group .form-select:not([value=""]):not([value="Todas as regiões"]):not([value="Todas as uvas"]) {
+  background-color: var(--branco);
+  border-color: var(--dourado);
+  color: var(--marrom);
+  font-weight: 500;
+}
+
+/* Loading States */
+.catalog-loading {
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.spinner-border.text-dourado {
+  color: var(--dourado) !important;
+  border-color: var(--dourado);
+  border-right-color: transparent;
+}
+
+/* Estados de Resultado */
+.no-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--cinza);
+}
+
+.no-results h4 {
+  color: var(--marrom);
+  margin-bottom: 1rem;
+}
+
+/* Contador de Resultados */
+.results-counter {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 0.9rem;
+  color: var(--cinza);
+  font-weight: 500;
+}
+
+/* Animações de Transição */
+.wine-card {
+  transition: all 0.3s ease, transform 0.3s ease;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estados da Paginação */
+.pagination .page-link:focus {
+  box-shadow: 0 0 0 0.2rem rgba(184, 123, 31, 0.25);
+}
+
+.pagination .page-item.disabled .page-link {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Busca Ativa */
+.search-bar.search-active {
+  border-color: var(--dourado);
+  box-shadow: 0 4px 12px rgba(184, 123, 31, 0.15);
+}
+
+.search-bar .form-control:not(:placeholder-shown) {
+  background-color: var(--branco);
+  font-weight: 500;
+}
+
+/* Feedback Visual para Filtros */
+.filters-sidebar.has-active-filters {
+  border-color: var(--dourado);
+  box-shadow: 0 4px 12px rgba(184, 123, 31, 0.1);
+}
+
+.filters-sidebar .filter-group.has-active-filter h6 {
+  color: var(--dourado);
+  position: relative;
+}
+
+.filters-sidebar .filter-group.has-active-filter h6::after {
+  content: "●";
+  color: var(--dourado);
+  margin-left: 0.5rem;
+  font-size: 0.7rem;
+}
+
+/* Botão Limpar Filtros Ativo */
+.btn-outline-secondary.has-filters {
+  background-color: var(--dourado);
+  border-color: var(--dourado);
+  color: var(--branco);
+}
+
+.btn-outline-secondary.has-filters:hover {
+  background-color: var(--marrom);
+  border-color: var(--marrom);
+}
+
+/* Responsividade para Estados */
+@media (max-width: 768px) {
+  .catalog-loading {
+    min-height: 200px;
+    padding: 2rem 1rem;
+  }
+
+  .no-results {
+    padding: 2rem 1rem;
+  }
+
+  .results-counter {
+    font-size: 0.8rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
