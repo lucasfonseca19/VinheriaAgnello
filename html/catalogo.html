@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Vinhos - Vinheria Agnello</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos personalizados -->
+  <link href="../css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header class="agnello-header">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <a href="home.html" class="agnello-logo text-decoration-none">
+            <img src="../assets/logo.png" alt="Vinheria Agnello">
+            <span>VINHERIA<br>AGNELLO</span>
+          </a>
+        </div>
+
+        <div class="col-md-4">
+          <nav class="agnello-nav text-center">
+            <a href="catalogo.html" class="text-dourado">Catálogo</a>
+            <a href="#quiz">Descubra seu vinho</a>
+            <a href="#blog">Blog Agnello</a>
+          </nav>
+        </div>
+
+        <div class="col-md-4">
+          <div class="agnello-icons text-end">
+            <a href="login.html" title="Login">
+              <img src="https://cdn-icons-png.flaticon.com/128/2321/2321232.png" alt="Login">
+            </a>
+            <a href="#carrinho" title="Carrinho">
+              <img src="https://cdn-icons-png.flaticon.com/128/1170/1170678.png" alt="Carrinho">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Catálogo Main Section -->
+  <main class="py-5 bg-bege">
+    <div class="container">
+
+      <!-- Título e Breadcrumb -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="home.html" class="text-dourado">Home</a></li>
+              <li class="breadcrumb-item active text-marrom" aria-current="page">Catálogo</li>
+            </ol>
+          </nav>
+          <h1 class="hero-title">Nossa Seleção</h1>
+          <p class="lead text-cinza">Descubra vinhos únicos cuidadosamente selecionados pelos Agnello</p>
+        </div>
+      </div>
+
+      <!-- Barra de Busca -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="search-bar bg-white p-3 rounded shadow-sm">
+            <div class="input-group">
+              <input type="text" class="form-control form-control-lg" placeholder="Busque por nome, região, uva ou tipo de vinho..." aria-label="Buscar vinhos">
+              <button class="btn btn-dourado" type="button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+
+        <!-- Sidebar Filtros -->
+        <div class="col-lg-3 mb-4">
+          <div class="filters-sidebar bg-white p-4 rounded shadow-sm">
+            <h4 class="text-marrom mb-4 font-playfair">Filtros</h4>
+
+            <!-- Filtro Tipo -->
+            <div class="filter-group mb-4">
+              <h6 class="text-dourado mb-3">Tipo de Vinho</h6>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="tinto">
+                <label class="form-check-label" for="tinto">Tinto</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="branco">
+                <label class="form-check-label" for="branco">Branco</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="rose">
+                <label class="form-check-label" for="rose">Rosé</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="espumante">
+                <label class="form-check-label" for="espumante">Espumante</label>
+              </div>
+            </div>
+
+            <!-- Filtro Preço -->
+            <div class="filter-group mb-4">
+              <h6 class="text-dourado mb-3">Faixa de Preço</h6>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="preco1">
+                <label class="form-check-label" for="preco1">Até R$ 100</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="preco2">
+                <label class="form-check-label" for="preco2">R$ 100 - R$ 200</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="preco3">
+                <label class="form-check-label" for="preco3">R$ 200 - R$ 500</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="preco4">
+                <label class="form-check-label" for="preco4">Acima de R$ 500</label>
+              </div>
+            </div>
+
+            <!-- Filtro Região -->
+            <div class="filter-group mb-4">
+              <h6 class="text-dourado mb-3">Região</h6>
+              <select class="form-select">
+                <option selected>Todas as regiões</option>
+                <option value="franca">França</option>
+                <option value="italia">Itália</option>
+                <option value="portugal">Portugal</option>
+                <option value="argentina">Argentina</option>
+                <option value="brasil">Brasil</option>
+                <option value="chile">Chile</option>
+                <option value="espanha">Espanha</option>
+                <option value="alemanha">Alemanha</option>
+                <option value="australia">Austrália</option>
+                <option value="eua">Estados Unidos</option>
+              </select>
+            </div>
+
+            <!-- Filtro Uva -->
+            <div class="filter-group mb-4">
+              <h6 class="text-dourado mb-3">Tipo de Uva</h6>
+              <select class="form-select">
+                <option selected>Todas as uvas</option>
+                <option value="cabernet">Cabernet Sauvignon</option>
+                <option value="merlot">Merlot</option>
+                <option value="pinot">Pinot Noir</option>
+                <option value="chardonnay">Chardonnay</option>
+                <option value="sauvignon">Sauvignon Blanc</option>
+                <option value="malbec">Malbec</option>
+                <option value="tempranillo">Tempranillo</option>
+                <option value="nebbiolo">Nebbiolo</option>
+                <option value="sangiovese">Sangiovese</option>
+                <option value="riesling">Riesling</option>
+              </select>
+            </div>
+
+            <!-- Filtros Especiais -->
+            <div class="filter-group mb-4">
+              <h6 class="text-dourado mb-3">Características</h6>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="escolhaAgnello">
+                <label class="form-check-label" for="escolhaAgnello">Escolha dos Agnello</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="organico">
+                <label class="form-check-label" for="organico">Orgânico</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="reserva">
+                <label class="form-check-label" for="reserva">Reserva</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="premium">
+                <label class="form-check-label" for="premium">Premium</label>
+              </div>
+            </div>
+
+            <!-- Filtro Ocasião -->
+            <div class="filter-group mb-4">
+              <h6 class="text-dourado mb-3">Ocasião</h6>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="jantar-especial">
+                <label class="form-check-label" for="jantar-especial">Jantar Especial</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="celebracao">
+                <label class="form-check-label" for="celebracao">Celebração</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="aperitivo">
+                <label class="form-check-label" for="aperitivo">Aperitivo</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="almoco">
+                <label class="form-check-label" for="almoco">Almoço</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="happy-hour">
+                <label class="form-check-label" for="happy-hour">Happy Hour</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="jantar-romantico">
+                <label class="form-check-label" for="jantar-romantico">Jantar Romântico</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="churrasco">
+                <label class="form-check-label" for="churrasco">Churrasco</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="sobremesa">
+                <label class="form-check-label" for="sobremesa">Sobremesa</label>
+              </div>
+            </div>
+
+            <!-- Filtro Perfil -->
+            <div class="filter-group mb-4">
+              <h6 class="text-dourado mb-3">Perfil do Apreciador</h6>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="sem-erro">
+                <label class="form-check-label" for="sem-erro">Sem Erro</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="aventureiro">
+                <label class="form-check-label" for="aventureiro">Aventureiro</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="sofisticado">
+                <label class="form-check-label" for="sofisticado">Sofisticado</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="tradicionalista">
+                <label class="form-check-label" for="tradicionalista">Tradicionalista</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="descontraido">
+                <label class="form-check-label" for="descontraido">Descontraído</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="explorador">
+                <label class="form-check-label" for="explorador">Explorador</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="colecionador">
+                <label class="form-check-label" for="colecionador">Colecionador</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="consciente">
+                <label class="form-check-label" for="consciente">Consciente</label>
+              </div>
+            </div>
+
+            <!-- Filtro Corpo -->
+            <div class="filter-group mb-4">
+              <h6 class="text-dourado mb-3">Corpo</h6>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="leve">
+                <label class="form-check-label" for="leve">Leve</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="medio">
+                <label class="form-check-label" for="medio">Médio</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="encorpado">
+                <label class="form-check-label" for="encorpado">Encorpado</label>
+              </div>
+            </div>
+
+            <!-- Filtro Doçura -->
+            <div class="filter-group mb-4">
+              <h6 class="text-dourado mb-3">Doçura</h6>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="seco">
+                <label class="form-check-label" for="seco">Seco</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="meio-seco">
+                <label class="form-check-label" for="meio-seco">Meio-seco</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="meio-doce">
+                <label class="form-check-label" for="meio-doce">Meio-doce</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="brut">
+                <label class="form-check-label" for="brut">Brut</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="brut-nature">
+                <label class="form-check-label" for="brut-nature">Brut Nature</label>
+              </div>
+            </div>
+
+            <!-- Botão Limpar Filtros -->
+            <button class="btn btn-outline-secondary w-100">Limpar Filtros</button>
+          </div>
+        </div>
+
+        <!-- Produtos Grid -->
+        <div class="col-lg-9">
+
+          <!-- Toolbar Superior -->
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <p class="text-cinza mb-0">Mostrando 1-9 de 18 vinhos</p>
+            <div class="d-flex align-items-center">
+              <label for="orderBy" class="me-2 text-marrom">Ordenar por:</label>
+              <select class="form-select form-select-sm" id="orderBy" style="width: auto;">
+                <option selected>Relevância</option>
+                <option value="nome">Nome (A-Z)</option>
+                <option value="preco-menor">Menor Preço</option>
+                <option value="preco-maior">Maior Preço</option>
+                <option value="avaliacao">Melhor Avaliação</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Grid de Produtos -->
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+
+            <!-- Card Produto 1 -->
+            <div class="col">
+              <div class="card wine-card h-100 shadow-sm">
+                <div class="position-relative">
+                  <img src="https://placehold.co/280x380/8B4513/FFFFFF/png?text=Château+Ausone" class="card-img-top" alt="Château Ausone">
+                  <div class="badges-container position-absolute top-0 start-0 p-2">
+                    <span class="badge bg-dourado">Escolha Agnello</span>
+                    <span class="badge bg-secondary mt-1">Reserva</span>
+                  </div>
+                  <div class="rating-container position-absolute top-0 end-0 p-2">
+                    <div class="rating text-warning">
+                      ★★★★★
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h6 class="card-title text-marrom font-playfair">Château Ausone Saint-Émilion</h6>
+                  <p class="card-text text-cinza small mb-2">França • Merlot • 2018</p>
+                  <p class="card-text text-cinza small flex-grow-1">Elegância e complexidade em cada gole</p>
+                  <div class="price-section mt-auto">
+                    <h5 class="text-dourado mb-2">R$ 1.850,00</h5>
+                    <div class="d-grid">
+                      <button class="btn btn-agnello btn-sm">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Produto 2 -->
+            <div class="col">
+              <div class="card wine-card h-100 shadow-sm">
+                <div class="position-relative">
+                  <img src="https://placehold.co/280x380/722F37/FFFFFF/png?text=Barolo+Brunate" class="card-img-top" alt="Barolo Brunate">
+                  <div class="badges-container position-absolute top-0 start-0 p-2">
+                    <span class="badge bg-dourado">Escolha Agnello</span>
+                    <span class="badge bg-secondary mt-1">Reserva</span>
+                  </div>
+                  <div class="rating-container position-absolute top-0 end-0 p-2">
+                    <div class="rating text-warning">
+                      ★★★★★
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h6 class="card-title text-marrom font-playfair">Barolo Brunate Michele Chiarlo</h6>
+                  <p class="card-text text-cinza small mb-2">Itália • Nebbiolo • 2017</p>
+                  <p class="card-text text-cinza small flex-grow-1">O rei dos vinhos italianos</p>
+                  <div class="price-section mt-auto">
+                    <h5 class="text-dourado mb-2">R$ 420,00</h5>
+                    <div class="d-grid">
+                      <button class="btn btn-agnello btn-sm">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Produto 3 -->
+            <div class="col">
+              <div class="card wine-card h-100 shadow-sm">
+                <div class="position-relative">
+                  <img src="https://placehold.co/280x380/F5F5DC/8B4513/png?text=Chablis+Premier" class="card-img-top" alt="Chablis Premier Cru">
+                  <div class="badges-container position-absolute top-0 start-0 p-2">
+                    <span class="badge bg-secondary">Premier Cru</span>
+                  </div>
+                  <div class="rating-container position-absolute top-0 end-0 p-2">
+                    <div class="rating text-warning">
+                      ★★★★☆
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h6 class="card-title text-marrom font-playfair">Chablis Premier Cru Montmains</h6>
+                  <p class="card-text text-cinza small mb-2">França • Chardonnay • 2020</p>
+                  <p class="card-text text-cinza small flex-grow-1">Mineralidade única de Chablis</p>
+                  <div class="price-section mt-auto">
+                    <h5 class="text-dourado mb-2">R$ 180,00</h5>
+                    <div class="d-grid">
+                      <button class="btn btn-agnello btn-sm">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Produto 4 -->
+            <div class="col">
+              <div class="card wine-card h-100 shadow-sm">
+                <div class="position-relative">
+                  <img src="https://placehold.co/280x380/2F4F2F/FFFFFF/png?text=Dom+Pérignon" class="card-img-top" alt="Dom Pérignon">
+                  <div class="badges-container position-absolute top-0 start-0 p-2">
+                    <span class="badge bg-dourado">Escolha Agnello</span>
+                    <span class="badge bg-dark mt-1">Vintage</span>
+                  </div>
+                  <div class="rating-container position-absolute top-0 end-0 p-2">
+                    <div class="rating text-warning">
+                      ★★★★★
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h6 class="card-title text-marrom font-playfair">Dom Pérignon Vintage</h6>
+                  <p class="card-text text-cinza small mb-2">França • Chardonnay • 2013</p>
+                  <p class="card-text text-cinza small flex-grow-1">O champagne dos sonhos</p>
+                  <div class="price-section mt-auto">
+                    <h5 class="text-dourado mb-2">R$ 950,00</h5>
+                    <div class="d-grid">
+                      <button class="btn btn-agnello btn-sm">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Produto 5 -->
+            <div class="col">
+              <div class="card wine-card h-100 shadow-sm">
+                <div class="position-relative">
+                  <img src="https://placehold.co/280x380/8B0000/FFFFFF/png?text=Vale+Meão" class="card-img-top" alt="Quinta do Vale Meão">
+                  <div class="badges-container position-absolute top-0 start-0 p-2">
+                    <span class="badge bg-success">Orgânico</span>
+                  </div>
+                  <div class="rating-container position-absolute top-0 end-0 p-2">
+                    <div class="rating text-warning">
+                      ★★★★☆
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h6 class="card-title text-marrom font-playfair">Quinta do Vale Meão</h6>
+                  <p class="card-text text-cinza small mb-2">Portugal • Touriga Nacional • 2019</p>
+                  <p class="card-text text-cinza small flex-grow-1">Tradição portuguesa premium</p>
+                  <div class="price-section mt-auto">
+                    <h5 class="text-dourado mb-2">R$ 280,00</h5>
+                    <div class="d-grid">
+                      <button class="btn btn-agnello btn-sm">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Produto 6 -->
+            <div class="col">
+              <div class="card wine-card h-100 shadow-sm">
+                <div class="position-relative">
+                  <img src="https://placehold.co/280x380/4B0082/FFFFFF/png?text=Catena+Zapata" class="card-img-top" alt="Catena Zapata">
+                  <div class="badges-container position-absolute top-0 start-0 p-2">
+                    <span class="badge bg-info">Alta Altitude</span>
+                  </div>
+                  <div class="rating-container position-absolute top-0 end-0 p-2">
+                    <div class="rating text-warning">
+                      ★★★★☆
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h6 class="card-title text-marrom font-playfair">Catena Zapata Malbec</h6>
+                  <p class="card-text text-cinza small mb-2">Argentina • Malbec • 2020</p>
+                  <p class="card-text text-cinza small flex-grow-1">Intensidade argentina autêntica</p>
+                  <div class="price-section mt-auto">
+                    <h5 class="text-dourado mb-2">R$ 150,00</h5>
+                    <div class="d-grid">
+                      <button class="btn btn-agnello btn-sm">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Produto 7 -->
+            <div class="col">
+              <div class="card wine-card h-100 shadow-sm">
+                <div class="position-relative">
+                  <img src="https://placehold.co/280x380/8B4513/FFFFFF/png?text=Miolo+Lote+43" class="card-img-top" alt="Miolo Lote 43">
+                  <div class="badges-container position-absolute top-0 start-0 p-2">
+                    <span class="badge bg-warning text-dark">Nacional</span>
+                  </div>
+                  <div class="rating-container position-absolute top-0 end-0 p-2">
+                    <div class="rating text-warning">
+                      ★★★☆☆
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h6 class="card-title text-marrom font-playfair">Miolo Lote 43 Pinot Noir</h6>
+                  <p class="card-text text-cinza small mb-2">Brasil • Pinot Noir • 2021</p>
+                  <p class="card-text text-cinza small flex-grow-1">Elegância brasileira da Serra Gaúcha</p>
+                  <div class="price-section mt-auto">
+                    <h5 class="text-dourado mb-2">R$ 85,00</h5>
+                    <div class="d-grid">
+                      <button class="btn btn-agnello btn-sm">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Produto 8 -->
+            <div class="col">
+              <div class="card wine-card h-100 shadow-sm">
+                <div class="position-relative">
+                  <img src="https://placehold.co/280x380/FFC0CB/8B4513/png?text=Whispering+Angel" class="card-img-top" alt="Whispering Angel">
+                  <div class="badges-container position-absolute top-0 start-0 p-2">
+                    <span class="badge bg-light text-dark">Verão</span>
+                  </div>
+                  <div class="rating-container position-absolute top-0 end-0 p-2">
+                    <div class="rating text-warning">
+                      ★★★★☆
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h6 class="card-title text-marrom font-playfair">Whispering Angel Rosé</h6>
+                  <p class="card-text text-cinza small mb-2">França • Grenache • 2022</p>
+                  <p class="card-text text-cinza small flex-grow-1">Frescor provençal incomparável</p>
+                  <div class="price-section mt-auto">
+                    <h5 class="text-dourado mb-2">R$ 120,00</h5>
+                    <div class="d-grid">
+                      <button class="btn btn-agnello btn-sm">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Produto 9 -->
+            <div class="col">
+              <div class="card wine-card h-100 shadow-sm">
+                <div class="position-relative">
+                  <img src="https://placehold.co/280x380/FFFFE0/8B4513/png?text=Dr.+Loosen" class="card-img-top" alt="Dr. Loosen Riesling">
+                  <div class="badges-container position-absolute top-0 start-0 p-2">
+                    <span class="badge bg-primary">Kabinett</span>
+                    <span class="badge bg-success mt-1">Baixo Álcool</span>
+                  </div>
+                  <div class="rating-container position-absolute top-0 end-0 p-2">
+                    <div class="rating text-warning">
+                      ★★★★☆
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body d-flex flex-column">
+                  <h6 class="card-title text-marrom font-playfair">Riesling Kabinett Dr. Loosen</h6>
+                  <p class="card-text text-cinza small mb-2">Alemanha • Riesling • 2021</p>
+                  <p class="card-text text-cinza small flex-grow-1">Doçura equilibrada alemã</p>
+                  <div class="price-section mt-auto">
+                    <h5 class="text-dourado mb-2">R$ 95,00</h5>
+                    <div class="d-grid">
+                      <button class="btn btn-agnello btn-sm">Adicionar ao Carrinho</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Paginação -->
+          <nav aria-label="Navegação do catálogo">
+            <ul class="pagination justify-content-center">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
+              </li>
+              <li class="page-item active">
+                <a class="page-link" href="#">1</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">2</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="agnello-footer">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-4">
+          <a href="home.html" class="agnello-logo text-decoration-none">
+            <img src="../assets/logo.png" alt="Vinheria Agnello">
+            <span>VINHERIA<br>AGNELLO</span>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <p class="mb-1">Rua Fiap da Silva, 99, São Paulo</p>
+          <p class="mb-1">grupolegal@agnello.com</p>
+          <p class="mb-0">+55 (11) 91212-1212</p>
+        </div>
+        <div class="col-md-4">
+          <p class="mb-1"><strong>FIAP Grupo</strong></p>
+          <p class="mb-0">
+            Lucas Oliveira RM<br>
+            Matheus Vieira RM<br>
+            Vinícius Taiki RM 852776
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
