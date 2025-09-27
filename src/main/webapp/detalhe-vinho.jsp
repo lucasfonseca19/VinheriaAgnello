@@ -2,7 +2,57 @@
 <%@ page import="java.util.*" %>
 <%@ page import="com.vinheria.service.VinhoService" %>
 <%@ page import="com.vinheria.beans.Vinho" %>
+<%@ page import="com.vinheria.beans.CarrinhoItem" %>
 <%
+    // Processar adição ao carrinho (POST)
+    String successMessage = null;
+    if ("POST".equals(request.getMethod())) {
+        try {
+            int vinhoId = Integer.parseInt(request.getParameter("vinhoId"));
+            int quantidade = Integer.parseInt(request.getParameter("quantity"));
+
+            VinhoService vinhoService = new VinhoService();
+            Vinho vinhoParaCarrinho = vinhoService.buscarPorId(vinhoId);
+
+            if (vinhoParaCarrinho != null && quantidade > 0) {
+                // Obter ou criar carrinho na sessão
+                @SuppressWarnings("unchecked")
+                List<CarrinhoItem> carrinho = (List<CarrinhoItem>) session.getAttribute("carrinho");
+                if (carrinho == null) {
+                    carrinho = new ArrayList<>();
+                }
+
+                // Verificar se o vinho já está no carrinho
+                boolean encontrado = false;
+                for (CarrinhoItem item : carrinho) {
+                    if (item.getVinhoId() == vinhoId) {
+                        item.setQuantidade(item.getQuantidade() + quantidade);
+                        encontrado = true;
+                        break;
+                    }
+                }
+
+                // Se não encontrou, adicionar novo item
+                if (!encontrado) {
+                    CarrinhoItem novoItem = new CarrinhoItem(
+                        vinhoId,
+                        vinhoParaCarrinho.getNome(),
+                        vinhoParaCarrinho.getPreco(),
+                        vinhoParaCarrinho.getImagem(),
+                        quantidade
+                    );
+                    carrinho.add(novoItem);
+                }
+
+                // Salvar carrinho na sessão
+                session.setAttribute("carrinho", carrinho);
+                successMessage = quantidade + " garrafa" + (quantidade > 1 ? "s" : "") + " de \"" + vinhoParaCarrinho.getNome() + "\" adicionada" + (quantidade > 1 ? "s" : "") + " ao carrinho!";
+            }
+        } catch (Exception e) {
+            // Ignorar erros para manter simplicidade
+        }
+    }
+
     // Obter ID do vinho da URL
     String wineIdParam = request.getParameter("id");
 
@@ -54,6 +104,22 @@
           </nav>
         </div>
       </div>
+
+      <!-- Mensagem de Sucesso -->
+      <% if (successMessage != null) { %>
+        <div class="row mb-4">
+          <div class="col-12">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-check-circle-fill me-2" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+              </svg>
+              <%= successMessage %>
+              <a href="carrinho.jsp" class="alert-link ms-2">Ver Carrinho</a>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          </div>
+        </div>
+      <% } %>
 
       <% if (errorMessage != null) { %>
         <!-- Erro: Vinho não encontrado -->
@@ -149,7 +215,7 @@
 
               <!-- Seletor Quantidade e Carrinho -->
               <div class="purchase-section">
-                <form method="post" action="#" id="addToCartForm">
+                <form method="post" action="">
                   <input type="hidden" name="vinhoId" value="<%= vinho.getId() %>">
                   <div class="row align-items-end">
                     <div class="col-sm-4 mb-3">
@@ -161,7 +227,7 @@
                       </select>
                     </div>
                     <div class="col-sm-8 mb-3">
-                      <button type="button" class="btn btn-dourado w-100 py-3" onclick="addToCart()">
+                      <button type="submit" class="btn btn-dourado w-100 py-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2" viewBox="0 0 16 16">
                           <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                         </svg>
@@ -240,18 +306,3 @@
 
 <!-- Include footer -->
 <%@ include file="includes/footer.jsp" %>
-
-<script>
-// Funcionalidade do botão adicionar ao carrinho (simulação)
-function addToCart() {
-  const quantity = document.getElementById('quantity').value;
-  const wineName = '<%= vinho != null ? vinho.getNome().replace("'", "\\'") : "" %>';
-
-  if (wineName) {
-    alert(`${quantity} garrafa${quantity > 1 ? 's' : ''} de "${wineName}" adicionada${quantity > 1 ? 's' : ''} ao carrinho!`);
-
-    // Aqui seria implementada a lógica real do carrinho
-    // Por exemplo: enviar para um servlet ou usar AJAX
-  }
-}
-</script>

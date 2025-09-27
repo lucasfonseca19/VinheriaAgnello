@@ -1,8 +1,20 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page import="java.util.*" %>
+<%@ page import="com.vinheria.beans.CarrinhoItem" %>
 <%
     // Garantir UTF-8 na resposta
     response.setContentType("text/html; charset=UTF-8");
     response.setCharacterEncoding("UTF-8");
+
+    // Calcular contador de itens no carrinho
+    int contadorCarrinho = 0;
+    @SuppressWarnings("unchecked")
+    List<CarrinhoItem> carrinhoHeader = (List<CarrinhoItem>) session.getAttribute("carrinho");
+    if (carrinhoHeader != null) {
+        for (CarrinhoItem item : carrinhoHeader) {
+            contadorCarrinho += item.getQuantidade();
+        }
+    }
 %>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -47,8 +59,14 @@
             <a href="${pageContext.request.contextPath}/login.jsp" title="Login">
               <img src="https://cdn-icons-png.flaticon.com/128/2321/2321232.png" alt="Login">
             </a>
-            <a href="#carrinho" title="Carrinho">
+            <a href="${pageContext.request.contextPath}/carrinho.jsp" title="Carrinho" class="position-relative">
               <img src="https://cdn-icons-png.flaticon.com/128/1170/1170678.png" alt="Carrinho">
+              <% if (contadorCarrinho > 0) { %>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dourado text-dark">
+                  <%= contadorCarrinho %>
+                  <span class="visually-hidden">itens no carrinho</span>
+                </span>
+              <% } %>
             </a>
           </div>
         </div>
