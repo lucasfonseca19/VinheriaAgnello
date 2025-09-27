@@ -1,11 +1,15 @@
 package com.vinheria.service;
 
-import com.vinheria.beans.Vinho;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.vinheria.beans.QuizResposta;
+import com.vinheria.beans.Vinho;
+
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.lang.reflect.Type;
 import java.util.*;
-import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 /**
  * Service para operações com vinhos e algoritmo de recomendação
@@ -14,176 +18,34 @@ public class VinhoService {
     private static final String JSON_PATH = "/data/vinhos.json";
     private List<Vinho> vinhos;
 
+    // Classe interna para corresponder à estrutura do JSON
+    private static class VinhosData {
+        List<Vinho> vinhos;
+    }
+
     public VinhoService() {
         carregarVinhos();
     }
 
     /**
-     * Carrega os vinhos do arquivo JSON
+     * Carrega os vinhos dinamicamente do arquivo vinhos.json usando Gson.
      */
     private void carregarVinhos() {
-        vinhos = new ArrayList<>();
-
-        // Para fins de demonstração, vamos criar alguns vinhos hardcoded
-        // Em um ambiente real, seria feito parsing do JSON
-        criarVinhosMock();
-    }
-
-    /**
-     * Cria vinhos mock baseados no JSON existente
-     */
-    private void criarVinhosMock() {
-        // Vinho 1 - Château Ausone (Premium, Tinto)
-        Vinho vinho1 = new Vinho();
-        vinho1.setId(1);
-        vinho1.setNome("Château Ausone Saint-Émilion");
-        vinho1.setPreco(1850.00);
-        vinho1.setImagem("https://placehold.co/280x380/8B4513/FFFFFF/png?text=Château+Ausone");
-        vinho1.setTipo("tinto");
-        vinho1.setRegiao("França");
-        vinho1.setUva("Merlot");
-        vinho1.setAno(2018);
-        vinho1.setAvaliacao(5);
-        vinho1.setEscolhaAgnello(true);
-        vinho1.setCorpo("Encorpado");
-        vinho1.setDocura("Seco");
-        vinho1.setOcasiao(Arrays.asList("Jantar especial", "Celebração"));
-        vinho1.setPerfil(Arrays.asList("Aventureiro", "Sofisticado"));
-        vinho1.setDescricaoAgnello("Giulio Agnello: Elegância e complexidade em cada gole. Um vinho para momentos especiais.");
-        vinhos.add(vinho1);
-
-        // Vinho 2 - Chablis (Branco, Médio)
-        Vinho vinho2 = new Vinho();
-        vinho2.setId(3);
-        vinho2.setNome("Chablis Premier Cru Montmains");
-        vinho2.setPreco(180.00);
-        vinho2.setImagem("https://placehold.co/280x380/F5F5DC/8B4513/png?text=Chablis+Premier");
-        vinho2.setTipo("branco");
-        vinho2.setRegiao("França");
-        vinho2.setUva("Chardonnay");
-        vinho2.setAno(2020);
-        vinho2.setAvaliacao(4);
-        vinho2.setEscolhaAgnello(false);
-        vinho2.setCorpo("Leve");
-        vinho2.setDocura("Seco");
-        vinho2.setOcasiao(Arrays.asList("Almoço", "Aperitivo"));
-        vinho2.setPerfil(Arrays.asList("Sem erro", "Elegante"));
-        vinho2.setDescricaoAgnello("Giulio Agnello: Mineralidade única de Chablis, perfeito para quem busca elegância.");
-        vinhos.add(vinho2);
-
-        // Vinho 3 - Dom Pérignon (Espumante Premium)
-        Vinho vinho3 = new Vinho();
-        vinho3.setId(4);
-        vinho3.setNome("Dom Pérignon Vintage");
-        vinho3.setPreco(950.00);
-        vinho3.setImagem("https://placehold.co/280x380/2F4F2F/FFFFFF/png?text=Dom+Pérignon");
-        vinho3.setTipo("espumante");
-        vinho3.setRegiao("França");
-        vinho3.setUva("Chardonnay");
-        vinho3.setAno(2013);
-        vinho3.setAvaliacao(5);
-        vinho3.setEscolhaAgnello(true);
-        vinho3.setCorpo("Médio");
-        vinho3.setDocura("Brut");
-        vinho3.setOcasiao(Arrays.asList("Celebração", "Brinde"));
-        vinho3.setPerfil(Arrays.asList("Luxuoso", "Sofisticado"));
-        vinho3.setDescricaoAgnello("Bianca Agnello: O champagne dos sonhos para celebrações inesquecíveis.");
-        vinhos.add(vinho3);
-
-        // Vinho 4 - Catena Zapata (Argentino, Acessível)
-        Vinho vinho4 = new Vinho();
-        vinho4.setId(6);
-        vinho4.setNome("Catena Zapata Malbec");
-        vinho4.setPreco(150.00);
-        vinho4.setImagem("https://placehold.co/280x380/4B0082/FFFFFF/png?text=Catena+Zapata");
-        vinho4.setTipo("tinto");
-        vinho4.setRegiao("Argentina");
-        vinho4.setUva("Malbec");
-        vinho4.setAno(2020);
-        vinho4.setAvaliacao(4);
-        vinho4.setEscolhaAgnello(false);
-        vinho4.setCorpo("Encorpado");
-        vinho4.setDocura("Seco");
-        vinho4.setOcasiao(Arrays.asList("Churrasco", "Encontro amigos"));
-        vinho4.setPerfil(Arrays.asList("Aventureiro", "Descontraído"));
-        vinho4.setDescricaoAgnello("Bianca Agnello: Intensidade argentina autêntica, perfeito para momentos descontraídos.");
-        vinhos.add(vinho4);
-
-        // Vinho 5 - Whispering Angel (Rosé)
-        Vinho vinho5 = new Vinho();
-        vinho5.setId(8);
-        vinho5.setNome("Whispering Angel Rosé");
-        vinho5.setPreco(120.00);
-        vinho5.setImagem("https://placehold.co/280x380/FFC0CB/8B4513/png?text=Whispering+Angel");
-        vinho5.setTipo("rosé");
-        vinho5.setRegiao("França");
-        vinho5.setUva("Grenache");
-        vinho5.setAno(2022);
-        vinho5.setAvaliacao(4);
-        vinho5.setEscolhaAgnello(false);
-        vinho5.setCorpo("Leve");
-        vinho5.setDocura("Seco");
-        vinho5.setOcasiao(Arrays.asList("Verão", "Piscina"));
-        vinho5.setPerfil(Arrays.asList("Descontraído", "Fresh"));
-        vinho5.setDescricaoAgnello("Bianca Agnello: Frescor provençal incomparável, o verão em uma garrafa!");
-        vinhos.add(vinho5);
-
-        // Vinho 6 - Riesling (Doce, Iniciante)
-        Vinho vinho6 = new Vinho();
-        vinho6.setId(9);
-        vinho6.setNome("Riesling Kabinett Dr. Loosen");
-        vinho6.setPreco(95.00);
-        vinho6.setImagem("https://placehold.co/280x380/FFFFE0/8B4513/png?text=Dr.+Loosen");
-        vinho6.setTipo("branco");
-        vinho6.setRegiao("Alemanha");
-        vinho6.setUva("Riesling");
-        vinho6.setAno(2021);
-        vinho6.setAvaliacao(4);
-        vinho6.setEscolhaAgnello(false);
-        vinho6.setCorpo("Leve");
-        vinho6.setDocura("Meio-doce");
-        vinho6.setOcasiao(Arrays.asList("Sobremesa", "Aperitivo"));
-        vinho6.setPerfil(Arrays.asList("Sem erro", "Explorador"));
-        vinho6.setDescricaoAgnello("Giulio Agnello: Doçura equilibrada alemã, perfeito para quem está começando.");
-        vinhos.add(vinho6);
-
-        // Vinho 7 - Prosecco (Espumante Acessível)
-        Vinho vinho7 = new Vinho();
-        vinho7.setId(13);
-        vinho7.setNome("Prosecco di Valdobbiadene DOCG");
-        vinho7.setPreco(75.00);
-        vinho7.setImagem("https://placehold.co/280x380/F5F5DC/8B4513/png?text=Prosecco+DOCG");
-        vinho7.setTipo("espumante");
-        vinho7.setRegiao("Itália");
-        vinho7.setUva("Glera");
-        vinho7.setAno(2022);
-        vinho7.setAvaliacao(3);
-        vinho7.setEscolhaAgnello(false);
-        vinho7.setCorpo("Leve");
-        vinho7.setDocura("Extra-seco");
-        vinho7.setOcasiao(Arrays.asList("Happy hour", "Celebração"));
-        vinho7.setPerfil(Arrays.asList("Descontraído", "Sociável"));
-        vinho7.setDescricaoAgnello("Giulio Agnello: Borbulhas italianas autênticas, alegria em cada gole!");
-        vinhos.add(vinho7);
-
-        // Vinho 8 - Tempranillo (Espanhol, Tradicional)
-        Vinho vinho8 = new Vinho();
-        vinho8.setId(16);
-        vinho8.setNome("Tempranillo Reserva Marqués de Riscal");
-        vinho8.setPreco(160.00);
-        vinho8.setImagem("https://placehold.co/280x380/8B0000/FFFFFF/png?text=Marqués+Riscal");
-        vinho8.setTipo("tinto");
-        vinho8.setRegiao("Espanha");
-        vinho8.setUva("Tempranillo");
-        vinho8.setAno(2017);
-        vinho8.setAvaliacao(4);
-        vinho8.setEscolhaAgnello(false);
-        vinho8.setCorpo("Médio");
-        vinho8.setDocura("Seco");
-        vinho8.setOcasiao(Arrays.asList("Jantar família", "Tapas"));
-        vinho8.setPerfil(Arrays.asList("Tradicionalista", "Autêntico"));
-        vinho8.setDescricaoAgnello("Bianca Agnello: Tradição espanhola centenária, calorosa e autêntica.");
-        vinhos.add(vinho8);
+        try (InputStream inputStream = VinhoService.class.getResourceAsStream(JSON_PATH)) {
+            if (inputStream == null) {
+                throw new RuntimeException("Arquivo JSON não encontrado no classpath: " + JSON_PATH);
+            }
+            try (Reader reader = new InputStreamReader(inputStream)) {
+                Gson gson = new Gson();
+                VinhosData vinhosData = gson.fromJson(reader, VinhosData.class);
+                this.vinhos = vinhosData.vinhos;
+            }
+        } catch (Exception e) {
+            System.err.println("Erro crítico ao carregar e processar o arquivo JSON: " + e.getMessage());
+            e.printStackTrace();
+            // Em caso de falha, inicializa com uma lista vazia para evitar NullPointerException
+            this.vinhos = new ArrayList<>();
+        }
     }
 
     /**
@@ -296,7 +158,282 @@ public class VinhoService {
         }
     }
 
-    // Getters
+    // Métodos para o catálogo JSP
+
+    /**
+     * Filtra vinhos baseado nos parâmetros da request
+     */
+    public List<Vinho> filtrarVinhos(String busca, String[] tipos, String[] precos,
+                                     String regiao, String uva, String[] ocasioes,
+                                     String[] perfis, String[] caracteristicas,
+                                     String[] corpos, String[] docuras) {
+        return vinhos.stream()
+                .filter(vinho -> passaPorFiltros(vinho, busca, tipos, precos, regiao, uva,
+                                                ocasioes, perfis, caracteristicas, corpos, docuras))
+                .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+    }
+
+    private boolean passaPorFiltros(Vinho vinho, String busca, String[] tipos, String[] precos,
+                                   String regiao, String uva, String[] ocasioes, String[] perfis,
+                                   String[] caracteristicas, String[] corpos, String[] docuras) {
+
+        // Filtro de busca textual
+        if (busca != null && !busca.trim().isEmpty()) {
+            String buscaLower = busca.toLowerCase();
+            boolean matchBusca = vinho.getNome().toLowerCase().contains(buscaLower) ||
+                               vinho.getRegiao().toLowerCase().contains(buscaLower) ||
+                               vinho.getUva().toLowerCase().contains(buscaLower);
+            if (!matchBusca) return false;
+        }
+
+        // Filtro de tipo
+        if (tipos != null && tipos.length > 0) {
+            boolean matchTipo = false;
+            for (String tipo : tipos) {
+                if (tipo.equals(vinho.getTipo())) {
+                    matchTipo = true;
+                    break;
+                }
+            }
+            if (!matchTipo) return false;
+        }
+
+        // Filtro de preço
+        if (precos != null && precos.length > 0) {
+            boolean matchPreco = false;
+            for (String faixaId : precos) {
+                double preco = vinho.getPreco();
+                boolean dentroFaixa = false;
+                switch(faixaId) {
+                    case "preco1": dentroFaixa = preco <= 100; break;
+                    case "preco2": dentroFaixa = preco > 100 && preco <= 200; break;
+                    case "preco3": dentroFaixa = preco > 200 && preco <= 500; break;
+                    case "preco4": dentroFaixa = preco > 500; break;
+                }
+                if (dentroFaixa) {
+                    matchPreco = true;
+                    break;
+                }
+            }
+            if (!matchPreco) return false;
+        }
+
+        // Filtro de região
+        if (regiao != null && !regiao.trim().isEmpty() && !regiao.equals("todas")) {
+            String regiaoMapeada = mapearRegiao(regiao);
+            if (!vinho.getRegiao().equals(regiaoMapeada)) return false;
+        }
+
+        // Filtro de uva
+        if (uva != null && !uva.trim().isEmpty() && !uva.equals("todas")) {
+            String uvaMapeada = mapearUva(uva);
+            if (!vinho.getUva().equals(uvaMapeada)) return false;
+        }
+
+        // Filtro de ocasião
+        if (ocasioes != null && ocasioes.length > 0) {
+            boolean matchOcasiao = false;
+            for (String ocasiaoId : ocasioes) {
+                String ocasiaoMapeada = mapearOcasiaoFiltro(ocasiaoId);
+                if (vinho.temOcasiao(ocasiaoMapeada)) {
+                    matchOcasiao = true;
+                    break;
+                }
+            }
+            if (!matchOcasiao) return false;
+        }
+
+        // Filtro de perfil
+        if (perfis != null && perfis.length > 0) {
+            boolean matchPerfil = false;
+            for (String perfilId : perfis) {
+                String perfilMapeado = mapearPerfilFiltro(perfilId);
+                if (vinho.temPerfil(perfilMapeado)) {
+                    matchPerfil = true;
+                    break;
+                }
+            }
+            if (!matchPerfil) return false;
+        }
+
+        // Filtro de características
+        if (caracteristicas != null && caracteristicas.length > 0) {
+            boolean matchCaracteristica = false;
+            for (String caracId : caracteristicas) {
+                boolean temCaracteristica = false;
+                switch(caracId) {
+                    case "escolhaAgnello": temCaracteristica = vinho.isEscolhaAgnello(); break;
+                    case "organico": temCaracteristica = vinho.temBadge("Orgânico"); break;
+                    case "reserva": temCaracteristica = vinho.temBadge("Reserva"); break;
+                    case "premium": temCaracteristica = vinho.temBadge("Premium"); break;
+                }
+                if (temCaracteristica) {
+                    matchCaracteristica = true;
+                    break;
+                }
+            }
+            if (!matchCaracteristica) return false;
+        }
+
+        // Filtro de corpo
+        if (corpos != null && corpos.length > 0) {
+            boolean matchCorpo = false;
+            for (String corpoId : corpos) {
+                String corpoMapeado = mapearCorpo(corpoId);
+                if (vinho.getCorpo().equals(corpoMapeado)) {
+                    matchCorpo = true;
+                    break;
+                }
+            }
+            if (!matchCorpo) return false;
+        }
+
+        // Filtro de doçura
+        if (docuras != null && docuras.length > 0) {
+            boolean matchDocura = false;
+            for (String docuraId : docuras) {
+                String docuraMapeada = mapearDocura(docuraId);
+                if (vinho.getDocura().equals(docuraMapeada)) {
+                    matchDocura = true;
+                    break;
+                }
+            }
+            if (!matchDocura) return false;
+        }
+
+        return true;
+    }
+
+    // Métodos de mapeamento para filtros
+    private String mapearRegiao(String regiao) {
+        switch(regiao) {
+            case "franca": return "França";
+            case "italia": return "Itália";
+            case "portugal": return "Portugal";
+            case "argentina": return "Argentina";
+            case "brasil": return "Brasil";
+            case "chile": return "Chile";
+            case "espanha": return "Espanha";
+            case "alemanha": return "Alemanha";
+            case "australia": return "Austrália";
+            case "eua": return "Estados Unidos";
+            default: return regiao;
+        }
+    }
+
+    private String mapearUva(String uva) {
+        switch(uva) {
+            case "cabernet": return "Cabernet Sauvignon";
+            case "merlot": return "Merlot";
+            case "pinot": return "Pinot Noir";
+            case "chardonnay": return "Chardonnay";
+            case "sauvignon": return "Sauvignon Blanc";
+            case "malbec": return "Malbec";
+            case "tempranillo": return "Tempranillo";
+            case "nebbiolo": return "Nebbiolo";
+            case "sangiovese": return "Sangiovese";
+            case "riesling": return "Riesling";
+            default: return uva;
+        }
+    }
+
+    private String mapearOcasiaoFiltro(String ocasiao) {
+        switch(ocasiao) {
+            case "jantar-especial": return "Jantar especial";
+            case "celebracao": return "Celebração";
+            case "aperitivo": return "Aperitivo";
+            case "almoco": return "Almoço";
+            case "happy-hour": return "Happy hour";
+            case "jantar-romantico": return "Jantar romântico";
+            case "churrasco": return "Churrasco";
+            case "sobremesa": return "Sobremesa";
+            default: return ocasiao;
+        }
+    }
+
+    private String mapearPerfilFiltro(String perfil) {
+        switch(perfil) {
+            case "sem-erro": return "Sem erro";
+            case "aventureiro": return "Aventureiro";
+            case "sofisticado": return "Sofisticado";
+            case "tradicionalista": return "Tradicionalista";
+            case "descontraido": return "Descontraído";
+            case "explorador": return "Explorador";
+            case "colecionador": return "Colecionador";
+            case "consciente": return "Consciente";
+            default: return perfil;
+        }
+    }
+
+    private String mapearCorpo(String corpo) {
+        switch(corpo) {
+            case "leve": return "Leve";
+            case "medio": return "Médio";
+            case "encorpado": return "Encorpado";
+            default: return corpo;
+        }
+    }
+
+    private String mapearDocura(String docura) {
+        switch(docura) {
+            case "seco": return "Seco";
+            case "meio-seco": return "Meio-seco";
+            case "meio-doce": return "Meio-doce";
+            case "brut": return "Brut";
+            case "brut-nature": return "Brut Nature";
+            default: return docura;
+        }
+    }
+
+    /**
+     * Ordena a lista de vinhos conforme critério
+     */
+    public List<Vinho> ordenarVinhos(List<Vinho> vinhos, String criterio) {
+        List<Vinho> vinhosCopia = new ArrayList<>(vinhos);
+
+        switch(criterio) {
+            case "nome":
+                vinhosCopia.sort((a, b) -> a.getNome().compareTo(b.getNome()));
+                break;
+            case "preco-menor":
+                vinhosCopia.sort((a, b) -> Double.compare(a.getPreco(), b.getPreco()));
+                break;
+            case "preco-maior":
+                vinhosCopia.sort((a, b) -> Double.compare(b.getPreco(), a.getPreco()));
+                break;
+            case "avaliacao":
+                vinhosCopia.sort((a, b) -> Integer.compare(b.getAvaliacao(), a.getAvaliacao()));
+                break;
+            default: // relevância
+                vinhosCopia.sort((a, b) -> {
+                    if (a.isEscolhaAgnello() && !b.isEscolhaAgnello()) return -1;
+                    if (!a.isEscolhaAgnello() && b.isEscolhaAgnello()) return 1;
+                    return Integer.compare(b.getAvaliacao(), a.getAvaliacao());
+                });
+        }
+        return vinhosCopia;
+    }
+
+    /**
+     * Pagina a lista de vinhos
+     */
+    public List<Vinho> paginarVinhos(List<Vinho> vinhos, int pagina, int itensPorPagina) {
+        int inicio = (pagina - 1) * itensPorPagina;
+        int fim = Math.min(inicio + itensPorPagina, vinhos.size());
+
+        if (inicio >= vinhos.size()) return new ArrayList<>();
+
+        return vinhos.subList(inicio, fim);
+    }
+
+    /**
+     * Calcula total de páginas
+     */
+    public int calcularTotalPaginas(int totalItens, int itensPorPagina) {
+        return (int) Math.ceil((double) totalItens / itensPorPagina);
+    }
+
+    // Getters originais
     public List<Vinho> getTodosVinhos() {
         return new ArrayList<>(vinhos);
     }

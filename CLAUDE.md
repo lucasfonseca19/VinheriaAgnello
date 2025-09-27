@@ -17,6 +17,7 @@ This is an academic e-commerce project for **Vinheria Agnello**, a fictional win
 
 ```
 .
+├── pom.xml                 # Configuração do Apache Maven
 ├── scripts/                # Scripts de desenvolvimento
 │   ├── deploy.sh           # Deploy automático para Tomcat
 │   ├── start_server.sh     # Iniciar servidor Tomcat
@@ -26,30 +27,20 @@ This is an academic e-commerce project for **Vinheria Agnello**, a fictional win
 │   │   └── com/vinheria/
 │   │       ├── beans/      # JavaBeans (QuizResposta, Vinho)
 │   │       └── service/    # Serviços (VinhoService)
+│   ├── resources/
+│   │   └── data/
+│   │       └── vinhos.json # Dados mockados dos vinhos
 │   └── webapp/             # Aplicação web JSP
 │       ├── WEB-INF/        # Configuração web
 │       │   └── web.xml     # Deployment descriptor
-│       ├── includes/       # Includes JSP
-│       │   ├── quiz-header.jsp
-│       │   └── quiz-footer.jsp
+│       ├── includes/       # Includes JSP compartilhados
 │       ├── quiz/           # Páginas do quiz JSP
-│       │   ├── descubra-quiz.jsp
-│       │   ├── descubra-inicio.jsp
-│       │   ├── descubra-resultado.jsp
-│       │   └── error.jsp
+│       ├── index.jsp       # Página principal
+│       ├── ...             # Outras páginas JSP
 │       ├── css/            # CSS files
 │       ├── js/             # JavaScript files
-│       ├── assets/         # Imagens e recursos
-│       └── data/           # Dados mockados
+│       └── assets/         # Imagens e recursos
 ├── html/                   # Páginas HTML (protótipos)
-│   ├── home.html           # Página inicial ✅
-│   ├── login.html          # Página de login ✅
-│   ├── cadastro.html       # Página de cadastro ✅
-│   ├── catalogo.html       # Listagem de vinhos ✅
-│   ├── detalhe-vinho.html  # Detalhe do vinho ✅
-│   ├── quiz.html           # Quiz HTML (protótipo)
-│   └── carrinho.html       # Carrinho de compras (pendente)
-├── build.xml               # Configuração do Apache Ant
 ├── .vscode/                # Configuração do VSCode
 └── PROJECT_CONTEXT.md      # Complete project context and requirements
 ```
@@ -60,18 +51,42 @@ This is an academic e-commerce project for **Vinheria Agnello**, a fictional win
 Solving "decision paralysis" in wine selection through personalized curation and storytelling, replicating the physical store's consultative experience digitally.
 
 ### MVP Pages Status
-1. **Home** ✅ - Landing page (convertida para HTML)
-2. **Login** ✅ - User authentication (convertida para HTML)
-3. **Cadastro** ✅ - User registration (convertida para HTML)
-4. **Listagem de Vinhos** ✅ - Wine catalog with advanced filters (completo)
+1. **Home** ✅ - Landing page (migrada para JSP)
+2. **Login** ✅ - User authentication (migrada para JSP)
+3. **Cadastro** ✅ - User registration (migrada para JSP)
+4. **Listagem de Vinhos** ✅ - Wine catalog with advanced filters (HTML completo, aguardando migração JSP)
 5. **Detalhe do Vinho** ✅ - Individual wine details com "A Palavra dos Agnello" (completo)
-6. **Quiz "Descubra seu Vinho"** 🔄 - Interactive recommendation quiz (pendente)
+6. **Quiz "Descubra seu Vinho"** ✅ - Interactive recommendation quiz (completo em JSP)
 7. **Carrinho** 🔄 - Shopping cart and checkout (pendente)
 
 ### Differentiation Strategy
 - **Hiper-curadoria**: Curated wine selection with personal stories
 - **"A Palavra dos Agnello"**: Personal notes from owners on each wine
 - **Quiz Recommendations**: Simplified decision-making through guided selection
+
+## Design System Agnello
+
+### Identidade Visual
+- **Paleta de Cores**:
+  - Bege: `#F5F5DC` (fundo principal)
+  - Marrom: `#654321` (texto principal)
+  - Dourado: `#DAA520` (acentos e CTAs)
+  - Cinza: `#6c757d` (texto secundário)
+
+### Tipografia
+- **Principais**: Playfair Display (títulos) + Roboto Condensed (corpo)
+- **Classes CSS**: `.font-playfair`, `.hero-title`, `.about-title`
+
+### Componentes Reutilizáveis
+- **Header**: `includes/header.jsp` - Logo Agnello, navegação, ícones login/carrinho
+- **Footer**: `includes/footer.jsp` - Informações de contato, dados FIAP
+- **Quiz Header/Footer**: `includes/quiz-header.jsp` e `includes/quiz-footer.jsp` - Versões específicas do quiz
+
+### Classes CSS Principais
+- `.agnello-header`, `.agnello-footer` - Layout principal
+- `.agnello-hero`, `.agnello-steps`, `.agnello-about` - Seções home
+- `.agnello-form` - Formulários estilizados
+- `.btn-agnello` - Botões com estilo da marca
 
 ## Development Guidelines
 
@@ -93,55 +108,54 @@ Solving "decision paralysis" in wine selection through personalized curation and
 ### Pré-requisitos
 - **Java 11+** (OpenJDK via Homebrew)
 - **Apache Tomcat** (via Homebrew)
-- **Apache Ant** (via Homebrew)
+- **Apache Maven** (via Homebrew)
 - **VSCode** com extensões Java recomendadas
 
 ### Scripts de Desenvolvimento
 Todos os scripts estão na pasta `scripts/`:
 
 ```bash
-# 🚀 Deploy completo (build + deploy + start server)
+# 🚀 Deploy completo (build com Maven + deploy no Tomcat)
 ./scripts/deploy.sh
 
 # 🔧 Gerenciar servidor
 ./scripts/start_server.sh    # Iniciar Tomcat
 ./scripts/stop_server.sh     # Parar Tomcat
 
-# 🏗️ Build manual com Ant
-ant clean deploy
+# 🏗️ Build manual com Maven
+mvn clean install
 ```
 
 ### Fluxo de Desenvolvimento
 
-1. **Desenvolvimento**: Editar arquivos em `src/main/webapp/`
-2. **Deploy**: Executar `./scripts/deploy.sh`
+1. **Desenvolvimento**: Editar arquivos em `src/main/`
+2. **Deploy**: Executar `./scripts/deploy.sh` para um ciclo completo de build e deploy.
 3. **Acesso**: http://localhost:8080/vinheria
 
 ### VSCode Integration
 
-Use **Ctrl+Shift+P** → "Tasks: Run Task":
-- **Deploy to Tomcat** - Build e deploy automático
-- **Start Tomcat** - Iniciar servidor
-- **Stop Tomcat** - Parar servidor
+Com a migração para Maven, é recomendado usar a extensão "Extension Pack for Java" da Microsoft, que integra o ciclo de vida do Maven diretamente na IDE, permitindo executar builds e outras tarefas com um clique.
 
 ### URLs da Aplicação
 
-- **Home**: http://localhost:8080/vinheria
+- **Home**: http://localhost:8080/vinheria (index.jsp - página principal)
+- **Login**: http://localhost:8080/vinheria/login.jsp
+- **Cadastro**: http://localhost:8080/vinheria/cadastro.jsp
 - **Quiz JSP**: http://localhost:8080/vinheria/quiz/descubra-inicio.jsp
 - **Manager Tomcat**: http://localhost:8080/manager
 
 ### Estrutura de Build
 
-- **Código fonte**: `src/main/java/` e `src/main/webapp/`
-- **Build output**: `build/` (criado pelo Ant)
-- **WAR file**: `vinheria.war` (deployado automaticamente)
+- **Código fonte**: `src/main/java/`, `src/main/resources/` e `src/main/webapp/`
+- **Build output**: `target/` (criado pelo Maven)
+- **WAR file**: `target/vinheria.war` (artefato final para deploy)
 - **Deploy**: `/opt/homebrew/opt/tomcat/libexec/webapps/`
 
 ## Important Files
 
 - `PROJECT_CONTEXT.md` - Complete project requirements and business context
+- `pom.xml` - Configuração do projeto Apache Maven
 - `.gitignore` - Configured for Java/JSP, Node.js, and IDE files
-- `build.xml` - Apache Ant build configuration
 - `scripts/` - Development and deployment scripts
 
 ## Development Notes
@@ -233,16 +247,62 @@ Use **Ctrl+Shift+P** → "Tasks: Run Task":
 ---
 
 ### Próximos Passos 🔄
-1. **Conversão para JSP**: Migrar páginas HTML para JSP dinâmicas
-2. **Sistema de Filtros**: Converter filtros JavaScript para server-side
-3. **Carrinho**: Sistema de compras com checkout
-4. **Integração Quiz**: Conectar quiz JSP com recomendação de vinhos
+1. **Migração HTML→JSP RESTANTE**: Converter últimas páginas HTML para JSP
+   - `html/catalogo.html` → `webapp/catalogo.jsp` (PRÓXIMA PRIORIDADE)
+   - `html/detalhe-vinho.html` → `webapp/detalhe-vinho.jsp`
+2. **Sistema de Filtros**: Converter filtros JavaScript para server-side Java
+3. **DAO Implementation**: Criar VinhoDAO para acesso aos dados
+4. **Carrinho**: Sistema de compras com checkout JSP
 
-### ✅ Recém Concluído
-1. **Infraestrutura JSP**: Configuração completa Tomcat + Ant + VSCode
-2. **Organização do Projeto**: Scripts separados, estrutura Maven padrão
-3. **Quiz JSP**: Sistema completo implementado (QuizResposta.java + JSPs)
-4. **Detalhe do Vinho**: Página individual com "A Palavra dos Agnello" (HTML)
+### 🎯 Estado Atual da Aplicação
+**DESIGN SYSTEM COMPLETO**: Todas as páginas principais (index, login, cadastro, quiz) estão com o design Agnello unificado, navegação integrada e funcionando perfeitamente. Próximo foco: migração do catálogo de vinhos mantendo toda a funcionalidade de filtros.
+
+### ✅ Recém Concluído (Migração HTML→JSP)
+1. **Infraestrutura JSP Completa**: Configuração Tomcat + VSCode + scripts organizados
+2. **Estrutura Maven**: Reorganização completa para `src/main/java/`, `src/main/resources/` e `src/main/webapp/`
+3. **Quiz JSP Funcional**: Sistema completo (QuizResposta.java + 4 páginas JSP + includes)
+4. **Build System**: Projeto migrado de Ant para Apache Maven, com gestão de dependências e ciclo de vida padronizados.
+5. **Refatoração do Serviço**: `VinhoService` foi refatorado para carregar dados dinamicamente do `vinhos.json` usando a biblioteca Gson, eliminando a duplicação de dados e o código hardcoded.
+6. **Design System Agnello**: Includes compartilhados (header.jsp + footer.jsp) com identidade visual unificada
+7. **Páginas Principais Migradas**: index.jsp, home.jsp, login.jsp, cadastro.jsp - design consistente
+8. **Navegação Integrada**: Todos os links atualizados para páginas JSP, quiz integrado ao design principal
+
+### 🔄 Status da Migração HTML → JSP
+
+#### ✅ Migradas para JSP (COMPLETAS)
+- **Sistema Principal**: Design Agnello unificado e navegação integrada
+  - `index.jsp` - Página inicial (design Agnello completo)
+  - `home.jsp` - Home alternativa (mesmo conteúdo do index)
+  - `login.jsp` - Login com form processing e seção de benefícios
+  - `cadastro.jsp` - Cadastro com modal de benefícios funcionando
+  - `includes/header.jsp` - Header Agnello (logo, navegação, icons)
+  - `includes/footer.jsp` - Footer Agnello (contato, informações FIAP)
+
+- **Quiz System**: 100% funcional em JSP com design Agnello
+  - `quiz/descubra-inicio.jsp` - Página inicial do quiz
+  - `quiz/descubra-quiz.jsp` - Quiz interativo (5 perguntas)
+  - `quiz/descubra-resultado.jsp` - Resultados e recomendações
+  - `quiz/error.jsp` - Página de erro
+  - `includes/quiz-header.jsp` - Header atualizado com design Agnello
+  - `includes/quiz-footer.jsp` - Footer atualizado com design Agnello
+  - Classes Java: `QuizResposta.java`, `Vinho.java`, `VinhoService.java`
+
+#### 🔄 Pendentes de Migração (HTML → JSP)
+- `html/catalogo.html` → `src/main/webapp/catalogo.jsp` (próxima prioridade)
+- `html/detalhe-vinho.html` → `src/main/webapp/detalhe-vinho.jsp`
+
+#### ✅ Tarefas da Migração CONCLUÍDAS
+1. **✅ Includes compartilhados criados** (`header.jsp`, `footer.jsp`)
+2. **✅ Design System Agnello implementado** (paleta, tipografia, layout)
+3. **✅ Formulários JSP configurados** para processamento server-side
+4. **✅ Navegação integrada** entre todas as páginas JSP
+5. **✅ Consistência visual total** em toda a aplicação
+
+#### 📋 Próximas Tarefas (Listagem de Vinhos)
+1. **Migrar catálogo HTML→JSP** preservando filtros e funcionalidades
+2. **Converter filtros JavaScript** para lógica server-side Java
+3. **Implementar VinhoDAO** para acesso aos dados estruturados
+4. **Remover código JavaScript temporário** do `js/catalogo.js`
 
 ### Página de Detalhe do Vinho - Detalhes da Implementação ✅
 - **Arquivo**: `html/detalhe-vinho.html`

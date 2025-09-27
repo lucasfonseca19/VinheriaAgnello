@@ -1,5 +1,7 @@
 package com.vinheria.beans;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -20,14 +22,24 @@ public class Vinho implements Serializable {
     private int avaliacao;
     private boolean escolhaAgnello;
     private String harmonizacao;
+
+    @SerializedName("teor_alcoolico")
     private double teorAlcoolico;
+
     private int estoque;
+
+    @SerializedName("descricao_curta")
     private String descricaoCurta;
+
     private List<String> badges;
     private List<String> ocasiao;
     private List<String> perfil;
     private String corpo;
+
+    @SerializedName("doçura")
     private String docura;
+
+    @SerializedName("descricao_agnello")
     private String descricaoAgnello;
 
     // Construtores
@@ -196,7 +208,7 @@ public class Vinho implements Serializable {
 
     // Métodos utilitários
     public String getPrecoFormatado() {
-        return String.format("R$ %.2f", preco);
+        return String.format("R$ %.2f", preco).replace(".", ",");
     }
 
     public String getEstrelas() {
