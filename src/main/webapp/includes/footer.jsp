@@ -6,7 +6,7 @@
 
         <div class="row align-items-center">
           <div class="col-md-4">
-            <a href="${pageContext.request.contextPath}/index.jsp" class="agnello-logo text-decoration-none">
+            <a href="${pageContext.request.contextPath}/home.jsp" class="agnello-logo text-decoration-none">
               <img src="${pageContext.request.contextPath}/assets/logo.png" alt="Vinheria Agnello">
               <span>VINHERIA<br>AGNELLO</span>
             </a>

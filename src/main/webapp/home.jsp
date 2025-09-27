@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%
     // Configurar título da página
-    request.setAttribute("pageTitle", "Vinheria Agnello - Tradição e Sofisticação");
+    request.setAttribute("pageTitle", "Tradição e Sofisticação");
 %>
 
 <!-- Include header -->

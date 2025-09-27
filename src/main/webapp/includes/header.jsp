@@ -28,7 +28,7 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-4">
-          <a href="${pageContext.request.contextPath}/index.jsp" class="agnello-logo text-decoration-none">
+          <a href="${pageContext.request.contextPath}/home.jsp" class="agnello-logo text-decoration-none">
             <img src="${pageContext.request.contextPath}/assets/logo.png" alt="Vinheria Agnello">
             <span>VINHERIA<br>AGNELLO</span>
           </a>
@@ -37,7 +37,7 @@
         <div class="col-md-4">
           <nav class="agnello-nav text-center">
             <a href="${pageContext.request.contextPath}/html/catalogo.html">Catálogo</a>
-            <a href="${pageContext.request.contextPath}/quiz/descubra-inicio.jsp" class="active">Descubra seu vinho</a>
+            <a href="${pageContext.request.contextPath}/quiz/descubra-inicio.jsp">Descubra seu vinho</a>
             <a href="#blog">Blog Agnello</a>
           </nav>
         </div>
