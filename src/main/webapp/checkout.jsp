@@ -126,9 +126,7 @@
             <div class="bg-white rounded shadow-sm p-4">
               <h3 class="font-playfair text-marrom mb-4">Forma de Pagamento</h3>
               <div class="alert alert-info">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2" viewBox="0 0 16 16">
-                  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/>
-                </svg>
+                <i class="bi bi-info-circle me-2"></i>
                 <strong>Protótipo Demonstrativo:</strong> Esta é uma simulação de checkout. Nenhum pagamento real será processado.
               </div>
               <div class="row">
@@ -197,17 +195,13 @@
 
               <!-- Botão Finalizar -->
               <button type="submit" class="btn btn-dourado w-100 py-3 mb-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2" viewBox="0 0 16 16">
-                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H0V4zm0 3v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7H0zm3 2h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1z"/>
-                </svg>
+                <i class="bi bi-credit-card me-2"></i>
                 Finalizar Compra
               </button>
 
               <!-- Voltar ao Carrinho -->
               <a href="carrinho.jsp" class="btn btn-outline-secondary w-100">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="me-2" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
-                </svg>
+                <i class="bi bi-arrow-left me-2"></i>
                 Voltar ao Carrinho
               </a>
 

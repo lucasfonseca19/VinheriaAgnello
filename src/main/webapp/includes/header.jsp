@@ -26,6 +26,8 @@
 
   <!-- Bootstrap CSS -->
   <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   <!-- Estilos personalizados -->
   <link href="${pageContext.request.contextPath}/css/styles.css" rel="stylesheet">
 

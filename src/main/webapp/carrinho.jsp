@@ -68,16 +68,11 @@
         <div class="row">
           <div class="col-12">
             <div class="text-center py-5">
-              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="text-cinza mb-4" viewBox="0 0 16 16">
-                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-              </svg>
+              <i class="bi bi-cart text-cinza mb-4" style="font-size: 5rem;"></i>
               <h3 class="text-marrom mb-3">Seu carrinho está vazio</h3>
               <p class="text-cinza mb-4">Explore nosso catálogo e descubra vinhos incríveis para adicionar ao seu carrinho.</p>
               <a href="catalogo.jsp" class="btn btn-dourado btn-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2" viewBox="0 0 16 16">
-                  <path d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9.5v-4z"/>
-                  <path d="M6.5 2A2.5 2.5 0 0 0 4 4.5V14a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V4.5A2.5 2.5 0 0 0 9.5 2h-3zM8 1a3.5 3.5 0 0 1 3.5 3.5v9.664a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V4.5A3.5 3.5 0 0 1 6.5 1h1z"/>
-                </svg>
+                <i class="bi bi-clock me-2"></i>
                 Explorar Catálogo
               </a>
             </div>
@@ -130,9 +125,7 @@
                             <input type="hidden" name="vinhoId" value="<%= item.getVinhoId() %>">
                             <button type="submit" class="btn btn-outline-danger btn-sm"
                                     onclick="return confirm('Remover <%= item.getVinhoNome() %> do carrinho?')">
-                              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1V1zM3 1v1h10V1a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h1zm0 2H2v10h12V3H3zm2 2a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5A.5.5 0 0 0 5 5zm4 0a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5A.5.5 0 0 0 9 5zm4 0a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 1 0v-5a.5.5 0 0 0-.5-.5z"/>
-                              </svg>
+                              <i class="bi bi-trash"></i>
                             </button>
                           </form>
                         </td>
@@ -169,17 +162,13 @@
 
               <!-- Continuar Comprando -->
               <a href="catalogo.jsp" class="btn btn-outline-dourado">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="me-2" viewBox="0 0 16 16">
-                  <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"/>
-                </svg>
+                <i class="bi bi-arrow-left me-2"></i>
                 Continuar Comprando
               </a>
 
               <!-- Finalizar Compra -->
               <a href="checkout.jsp" class="btn btn-dourado btn-lg px-5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="me-2" viewBox="0 0 16 16">
-                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H0V4zm0 3v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7H0zm3 2h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1z"/>
-                </svg>
+                <i class="bi bi-credit-card me-2"></i>
                 Finalizar Compra
               </a>
 

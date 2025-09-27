@@ -19,9 +19,10 @@
           <div class="col-md-4">
             <p class="mb-1"><strong>FIAP Grupo</strong></p>
             <p class="mb-0">
-              Lucas Oliveira RM<br>
-              Matheus Vieira RM<br>
-              Vinícius Taiki RM 852776
+              Lucas Oliveira RM552973<br>
+              Matheus Diniz RM<br>
+              Vinícius Taiki RM 852776<br>
+              Matheus Hammarstrom  RM 553403
             </p>
           </div>
         </div>
