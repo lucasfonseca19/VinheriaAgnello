@@ -11,7 +11,7 @@
     QuizResposta quiz = (QuizResposta) session.getAttribute("quiz");
 
     if (quiz == null || !quiz.isCompleto()) {
-        response.sendRedirect(request.getContextPath() + "/descubra-inicio.jsp");
+        response.sendRedirect(request.getContextPath() + "/quiz/descubra-inicio.jsp");
         return;
     }
 
@@ -20,7 +20,7 @@
     List<Vinho> recomendacoes = vinhoService.recomendarVinhos(quiz);
 %>
 
-<%@ include file="includes/quiz-header.jsp" %>
+<%@ include file="../includes/quiz-header.jsp" %>
 
 <div class="container py-5">
     <!-- Header de Resultados -->
@@ -192,7 +192,7 @@
                     Ver Todo o Catálogo
                 </a>
 
-                <form action="${pageContext.request.contextPath}/descubra-quiz.jsp" method="post" class="d-inline">
+                <form action="${pageContext.request.contextPath}/quiz/descubra-quiz.jsp" method="post" class="d-inline">
                     <input type="hidden" name="action" value="iniciar">
                     <button type="submit" class="btn btn-outline-agnello">
                         Fazer Novo Quiz
@@ -212,4 +212,4 @@
     session.removeAttribute("quiz");
 %>
 
-<%@ include file="includes/quiz-footer.jsp" %>
+<%@ include file="../includes/quiz-footer.jsp" %>

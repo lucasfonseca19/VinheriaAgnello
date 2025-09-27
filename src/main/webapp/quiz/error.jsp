@@ -3,7 +3,7 @@
     String pageTitle = "Erro - Vinheria Agnello";
 %>
 
-<%@ include file="includes/quiz-header.jsp" %>
+<%@ include file="../includes/quiz-header.jsp" %>
 
 <div class="container py-5">
     <div class="row justify-content-center">
@@ -25,7 +25,7 @@
                             Voltar ao Início
                         </a>
 
-                        <a href="${pageContext.request.contextPath}/descubra-inicio.jsp" class="btn btn-outline-agnello">
+                        <a href="${pageContext.request.contextPath}/quiz/descubra-inicio.jsp" class="btn btn-outline-agnello">
                             Tentar o Quiz Novamente
                         </a>
 
@@ -39,4 +39,4 @@
     </div>
 </div>
 
-<%@ include file="includes/quiz-footer.jsp" %>
+<%@ include file="../includes/quiz-footer.jsp" %>

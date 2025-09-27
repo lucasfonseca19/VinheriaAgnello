@@ -13,7 +13,7 @@
                     <ul class="list-unstyled">
                         <li><a href="${pageContext.request.contextPath}/html/home.html" class="text-light">Início</a></li>
                         <li><a href="${pageContext.request.contextPath}/html/catalogo.html" class="text-light">Catálogo</a></li>
-                        <li><a href="${pageContext.request.contextPath}/descubra-inicio.jsp" class="text-light">Descubra seu Vinho</a></li>
+                        <li><a href="${pageContext.request.contextPath}/quiz/descubra-inicio.jsp" class="text-light">Descubra seu Vinho</a></li>
                     </ul>
                 </div>
             </div>

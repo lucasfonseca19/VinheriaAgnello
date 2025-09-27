@@ -44,7 +44,7 @@
                         <a class="nav-link" href="${pageContext.request.contextPath}/html/catalogo.html">Catálogo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="${pageContext.request.contextPath}/descubra-inicio.jsp">Descubra seu Vinho</a>
+                        <a class="nav-link active" href="${pageContext.request.contextPath}/quiz/descubra-inicio.jsp">Descubra seu Vinho</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="${pageContext.request.contextPath}/html/login.html">Login</a>

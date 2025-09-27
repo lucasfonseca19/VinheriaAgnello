@@ -47,7 +47,7 @@
 
     // Redirecionar para resultado se completou
     if (quiz.isCompleto()) {
-        response.sendRedirect(request.getContextPath() + "/descubra-resultado.jsp");
+        response.sendRedirect(request.getContextPath() + "/quiz/descubra-resultado.jsp");
         return;
     }
 
@@ -55,7 +55,7 @@
     double progresso = quiz.getProgresso();
 %>
 
-<%@ include file="includes/quiz-header.jsp" %>
+<%@ include file="../includes/quiz-header.jsp" %>
 
 <div class="container py-5">
     <!-- Progress Bar -->
@@ -86,7 +86,7 @@
                             <h2 class="text-agnello-brown mb-4 text-center">Para qual momento você está escolhendo o vinho?</h2>
                             <p class="text-muted text-center mb-5">Nos ajude a entender a ocasião para fazer a recomendação perfeita.</p>
 
-                            <form method="post" action="${pageContext.request.contextPath}/descubra-quiz.jsp">
+                            <form method="post" action="${pageContext.request.contextPath}/quiz/descubra-quiz.jsp">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <button type="submit" name="resposta" value="jantar_romantico"
@@ -170,7 +170,7 @@
                             <h2 class="text-agnello-brown mb-4 text-center">Como você se definiria em relação aos vinhos?</h2>
                             <p class="text-muted text-center mb-5">Entender seu perfil nos ajuda a calibrar nossas recomendações.</p>
 
-                            <form method="post" action="${pageContext.request.contextPath}/descubra-quiz.jsp">
+                            <form method="post" action="${pageContext.request.contextPath}/quiz/descubra-quiz.jsp">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <button type="submit" name="resposta" value="iniciante"
@@ -242,7 +242,7 @@
                             <h2 class="text-agnello-brown mb-4 text-center">Qual estilo desperta mais seu interesse?</h2>
                             <p class="text-muted text-center mb-5">Vamos descobrir seu tipo de vinho preferido.</p>
 
-                            <form method="post" action="${pageContext.request.contextPath}/descubra-quiz.jsp">
+                            <form method="post" action="${pageContext.request.contextPath}/quiz/descubra-quiz.jsp">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <button type="submit" name="resposta" value="tinto_encorpado"
@@ -302,7 +302,7 @@
                             <h2 class="text-agnello-brown mb-4 text-center">Qual faixa de investimento considera adequada?</h2>
                             <p class="text-muted text-center mb-5">Nosso objetivo é encontrar o melhor vinho dentro do seu orçamento.</p>
 
-                            <form method="post" action="${pageContext.request.contextPath}/descubra-quiz.jsp">
+                            <form method="post" action="${pageContext.request.contextPath}/quiz/descubra-quiz.jsp">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <button type="submit" name="resposta" value="ate_100"
@@ -362,7 +362,7 @@
                             <h2 class="text-agnello-brown mb-4 text-center">Que sensação busca no vinho?</h2>
                             <p class="text-muted text-center mb-5">Por último, vamos entender suas preferências sensoriais.</p>
 
-                            <form method="post" action="${pageContext.request.contextPath}/descubra-quiz.jsp">
+                            <form method="post" action="${pageContext.request.contextPath}/quiz/descubra-quiz.jsp">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
                                         <button type="submit" name="resposta" value="leve_facil"
@@ -421,7 +421,7 @@
                     <div class="row mt-4">
                         <div class="col-6">
                             <% if (perguntaAtual > 1) { %>
-                                <form method="post" action="${pageContext.request.contextPath}/descubra-quiz.jsp" class="d-inline">
+                                <form method="post" action="${pageContext.request.contextPath}/quiz/descubra-quiz.jsp" class="d-inline">
                                     <input type="hidden" name="action" value="anterior">
                                     <button type="submit" class="btn btn-outline-secondary">
                                         <i class="fas fa-arrow-left me-2"></i>Anterior
@@ -430,7 +430,7 @@
                             <% } %>
                         </div>
                         <div class="col-6 text-end">
-                            <a href="${pageContext.request.contextPath}/descubra-inicio.jsp" class="btn btn-link text-muted">
+                            <a href="${pageContext.request.contextPath}/quiz/descubra-inicio.jsp" class="btn btn-link text-muted">
                                 Recomeçar Quiz
                             </a>
                         </div>
@@ -441,4 +441,4 @@
     </div>
 </div>
 
-<%@ include file="includes/quiz-footer.jsp" %>
+<%@ include file="../includes/quiz-footer.jsp" %>

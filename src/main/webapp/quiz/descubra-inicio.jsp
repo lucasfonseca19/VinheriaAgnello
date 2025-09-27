@@ -3,7 +3,7 @@
     String pageTitle = "Descubra seu Vinho";
 %>
 
-<%@ include file="includes/quiz-header.jsp" %>
+<%@ include file="../includes/quiz-header.jsp" %>
 
 <div class="container py-5">
     <!-- Hero Section -->
@@ -94,7 +94,7 @@
                     <p class="mb-4">O quiz leva apenas 3 minutos. Vamos começar nossa conversa!</p>
 
                     <!-- Formulário para iniciar o quiz -->
-                    <form action="${pageContext.request.contextPath}/descubra-quiz.jsp" method="post">
+                    <form action="${pageContext.request.contextPath}/quiz/descubra-quiz.jsp" method="post">
                         <input type="hidden" name="action" value="iniciar">
                         <button type="submit" class="btn btn-agnello-primary btn-lg px-5 py-3">
                             Começar o Quiz
@@ -147,4 +147,4 @@
     </div>
 </div>
 
-<%@ include file="includes/quiz-footer.jsp" %>
+<%@ include file="../includes/quiz-footer.jsp" %>
