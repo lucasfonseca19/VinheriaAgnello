@@ -55,7 +55,7 @@
     double progresso = quiz.getProgresso();
 %>
 
-<%@ include file="../includes/quiz-header.jsp" %>
+<%@ include file="../includes/header.jsp" %>
 
 <div class="container py-5">
     <!-- Progress Bar -->
@@ -441,4 +441,4 @@
     </div>
 </div>
 
-<%@ include file="../includes/quiz-footer.jsp" %>
+<%@ include file="../includes/footer.jsp" %>

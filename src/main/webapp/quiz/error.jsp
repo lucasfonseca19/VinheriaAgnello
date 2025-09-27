@@ -3,7 +3,7 @@
     String pageTitle = "Erro - Vinheria Agnello";
 %>
 
-<%@ include file="../includes/quiz-header.jsp" %>
+<%@ include file="../includes/header.jsp" %>
 
 <div class="container py-5">
     <div class="row justify-content-center">
@@ -39,4 +39,4 @@
     </div>
 </div>
 
-<%@ include file="../includes/quiz-footer.jsp" %>
+<%@ include file="../includes/footer.jsp" %>

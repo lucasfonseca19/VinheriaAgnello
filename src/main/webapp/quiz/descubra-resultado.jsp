@@ -20,7 +20,7 @@
     List<Vinho> recomendacoes = vinhoService.recomendarVinhos(quiz);
 %>
 
-<%@ include file="../includes/quiz-header.jsp" %>
+<%@ include file="../includes/header.jsp" %>
 
 <div class="container py-5">
     <!-- Header de Resultados -->
@@ -212,4 +212,4 @@
     session.removeAttribute("quiz");
 %>
 
-<%@ include file="../includes/quiz-footer.jsp" %>
+<%@ include file="../includes/footer.jsp" %>

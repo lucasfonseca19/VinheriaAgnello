@@ -3,7 +3,7 @@
     String pageTitle = "Descubra seu Vinho";
 %>
 
-<%@ include file="../includes/quiz-header.jsp" %>
+<%@ include file="../includes/header.jsp" %>
 
 <div class="container py-5">
     <!-- Hero Section -->
@@ -147,4 +147,4 @@
     </div>
 </div>
 
-<%@ include file="../includes/quiz-footer.jsp" %>
+<%@ include file="../includes/footer.jsp" %>
