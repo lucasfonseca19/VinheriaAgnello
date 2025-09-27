@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="col-lg-6 text-center">
-          <img src="${pageContext.request.contextPath}/imagens/garrafa.png" alt="Vinho Pinot Noir" class="img-fluid" style="max-height: 500px;">
+          <img src="${pageContext.request.contextPath}/assets/taca-esquerda.png" alt="Taça de Vinho Premium Agnello" class="img-fluid" style="max-height: 500px;">
         </div>
       </div>
     </div>
@@ -74,7 +74,7 @@
           </div>
         </div>
         <div class="col-lg-6 text-center">
-          <img src="${pageContext.request.contextPath}/imagens/familia.png" alt="Família Agnello" class="img-fluid rounded" style="max-width: 450px;">
+          <img src="${pageContext.request.contextPath}/assets/familia.png" alt="Família Agnello" class="img-fluid rounded shadow" style="max-width: 450px; border: 2px solid rgba(184, 123, 31, 0.15);">
         </div>
       </div>
     </div>
