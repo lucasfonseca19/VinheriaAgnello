@@ -18,7 +18,7 @@
             <p class="lead mb-4">
               Apresentando a verdadeira essência de um sommelier de vinhos para você, onde estiver.
             </p>
-            <button class="btn btn-agnello">ENTRE NESSA JORNADA</button>
+            <a href="${pageContext.request.contextPath}/quiz/descubra-inicio.jsp" class="btn btn-agnello">ENTRE NESSA JORNADA</a>
           </div>
         </div>
         <div class="col-lg-6 text-center">
@@ -70,7 +70,7 @@
               Sugerimos vinhos de acordo com o perfil de cada usuário, promovendo um momento
               único para a escolha perfeita.
             </p>
-            <button class="btn btn-agnello">CONHEÇA</button>
+            <button class="btn btn-agnello" onclick="alert('Esta funcionalidade ainda não foi desenvolvida.')">CONHEÇA</button>
           </div>
         </div>
         <div class="col-lg-6 text-center">
